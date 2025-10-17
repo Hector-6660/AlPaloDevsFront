@@ -1,0 +1,100 @@
+.opinionMin {
+    background-color: #B0B0B0;
+    padding: 10px 20px 10px 20px;
+    margin-bottom: 10px;
+}
+
+.datosUsuarioOpinion {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+
+    p {
+        margin: 0px 0px 0px 10px;
+    }
+}
+
+.imagenUsuarioOpinion {
+    width: 50px;
+    border-radius: 50%;
+}
+
+.datosPuntuacionOpinion{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+
+    .puntuacionOpinion {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        width: fit-content;
+        border-radius: 10px;
+        padding: 10px;
+
+        .puntuacion {
+            color: rgb(84, 161, 250);
+            font-size: 2rem;
+        }
+
+        p {
+            margin: 0;
+        }
+    }
+}
+
+.contenidoOpinion {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 0px 0px 10px 0px;
+
+    h3 {
+        margin: 0;
+    }
+
+    p {
+        margin: 0;
+        color: rgb(0, 0, 0);
+    }
+
+    .tituloOpinionFecha {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+
+        .tituloOpinion {
+            background-color: white;
+            width: fit-content;
+            padding: 15px;
+        }
+
+        p {
+            padding: 0px 0px 10px 10px;
+        }
+    }
+
+    .textoOpinion {
+        background-color: white;
+        padding: 0px 15px 15px 15px;
+        text-align: justify;
+    }
+}
+
+@media (max-width: 768px) {
+    .tituloOpinionFecha {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+
+        .tituloOpinion {
+            font-size: 1.1rem;
+        }
+
+        p {
+            font-size: 0.8rem;
+        }
+    }
+}

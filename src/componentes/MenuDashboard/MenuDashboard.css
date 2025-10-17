@@ -1,0 +1,71 @@
+.navbarMenu {
+    padding: 0px;
+}
+
+.menuDashboard {
+    background-color: rgb(84, 161, 250);
+}
+
+.menuDashboard .navbar-toggler {
+    background-color: #ffffff;
+}
+
+.navDashboard {
+    display: flex;
+    flex-direction: row;
+}
+
+.enlaceDashboard {
+    font-size: 25px;
+    color: #ffffff;
+    margin: 0px 5px;
+}
+
+.nav-link {
+    color: #ffffff !important;
+}
+
+.enlaceDashboard:hover {
+    color: rgb(0, 0, 0) !important;
+}
+
+Link {
+    color: #ffffff;
+    font-size: 25px;
+}
+
+.textoMenuDashboard {
+    display: inline;
+    color: #ffffff;
+    font-size: 18px;
+
+    a {
+        color: #ffffff;
+        font-size: 18px;
+    }
+}
+
+.separator {
+    color: #ffffff;
+    font-size: 25px;
+}
+
+.menu button, .menu div {
+    margin: auto;
+}
+
+.menu .navbar-nav {
+    margin: auto;
+}
+
+@media (max-width: 1062px) {
+    .enlaceDashboard {
+        font-size: 20px;
+    }
+
+    .textoMenuDashboard {
+        a {
+            font-size: 20px;
+        }
+    }
+}

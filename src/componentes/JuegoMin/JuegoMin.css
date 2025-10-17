@@ -1,0 +1,28 @@
+.juegoMinMargen {
+    padding: 5%;
+}
+
+.juegoMin:hover {
+    transition: transform 0.1s ease-in-out;
+    transform: scale(1.05);
+
+    h3 {
+        color: rgb(84, 161, 250);
+    }
+
+    .imagenJuegoMin {
+        outline: 4px solid rgb(84, 161, 250);
+    }
+}
+
+.juegoMin {
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+}
+
+.imagenJuegoMin {
+    width: 100%
+}

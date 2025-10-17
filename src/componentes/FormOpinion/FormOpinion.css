@@ -1,0 +1,208 @@
+.formOpinion {
+    background-color: #B0B0B0;
+    padding: 10px 20px 10px 20px;
+    width: 95%;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.datosSuperioresFormOpinion {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+
+    .datosSuperioresFormOpinion_1 {
+        text-align: center;
+
+        .fotoPerfilFormOpinion {
+            max-width: 100%;
+            border-radius: 50%;
+        }
+    }
+
+    .datosSuperioresFormOpinion_2 {
+        p {
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .titulo1 {
+            width: 75%;
+            height: 50px;
+            border-radius: 10px;
+            border: none;
+            padding: 5px;
+        }
+
+        .titulo1:focus {
+            outline: none;
+            border: 2px solid #000;
+        }
+
+        .titulo2 {
+            width: 100%;
+            height: 50px;
+            border-radius: 10px;
+            border: none;
+            padding: 5px;
+        }
+
+        .titulo2:focus {
+            outline: none;
+            border: 2px solid #000;
+        }
+    }
+
+    .datosSuperioresFormOpinion_3 {
+        max-height: 100%;
+
+        .notaFormOpinion {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: right;
+
+            label {
+                padding-right: 10px;
+            }
+
+            input {
+                width: 25%;
+                height: 100%;
+                border-radius: 10px;
+                border: none;
+                padding: 10px;
+                font-size: 2rem;
+            }
+
+            input:focus {
+                outline: none;
+                border: 2px solid #000;
+            }
+        }
+    }
+
+    .datosSuperioresFormOpinion_4 {
+        max-height: 100%;
+
+        .notaFormOpinion2 {
+            width: 100%;
+            height: 100px;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            input {
+                width: 50%;
+                height: 100%;
+                border-radius: 10px;
+                border: none;
+                padding: 10px;
+                font-size: 2rem;
+            }
+
+            input:focus {
+                outline: none;
+                border: 2px solid #000;
+            }
+        }
+    }
+}
+
+.datosInferioresFormOpinion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    textarea {
+        width: 100%;
+        height: 200px;
+        border-radius: 10px;
+        border: none;
+        padding: 10px;
+        resize: none;
+        margin-bottom: 10px;
+    }
+
+    textarea:focus {
+        outline: none;
+        border: 2px solid #000;
+    }
+
+    .botonesFormOpinion {
+        display: flex;
+        flex-direction: row;
+
+        .botonPublicarOpinion {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 15px;
+            color: rgb(255, 255, 255);
+            border-radius: 10px;
+            text-decoration: none;
+            border: 2px solid rgb(255, 255, 255);
+            font-size: 1.2rem;
+            width: 50%;
+            background-color: transparent;
+        }
+
+        .botonPublicarOpinion:hover {
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+            border: 2px solid rgb(0, 0, 0);
+        }
+
+        .botonEliminarOpinionContainer {
+            display: flex;
+            justify-content: right;
+            width: 50%;
+
+            .botonEliminarOpinion {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 10px 15px;
+                color: rgb(255, 255, 255);
+                border-radius: 10px;
+                text-decoration: none;
+                border: 2px solid rgb(255, 255, 255);
+                font-size: 1.2rem;
+                background-color: transparent;
+            }
+
+            .botonEliminarOpinion:hover {
+                background-color: rgb(223, 49, 49);
+                color: white;
+                border: 2px solid rgb(223, 49, 49);
+            }
+
+            .botonEliminarOpinion:disabled {
+                background-color: rgb(200, 200, 200);
+                color: rgb(150, 150, 150);
+                border: 2px solid rgb(200, 200, 200);
+                cursor: not-allowed;
+            }
+        }
+    }
+}
+
+@media (max-width: 567px) {
+    .fotoPerfilFormOpinion {
+        width: 50%;
+    }
+
+    .botonEliminarOpinionContainer {
+        justify-content: left;
+        width: 100%;
+
+        .botonEliminarOpinion {
+            justify-content: left;
+            width: 100%;
+        }
+    }
+}

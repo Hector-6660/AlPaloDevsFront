@@ -1,0 +1,45 @@
+.datosPrincipalesDemo {
+    text-align: center;
+}
+
+#miCanvas {
+    border: solid 1px #ccc;
+    margin: 20px;
+}
+
+.botonesDemo {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: black;
+        color: white;
+        border: none;
+    }
+
+    button:hover {
+        transition: all 0.1s ease-in-out;
+        background-color: rgb(84, 161, 250);
+    }
+
+    button:disabled {
+        background-color: grey;
+        cursor: not-allowed;
+    }
+}
+
+.juegoDemo {
+    text-align: justify;
+    margin-top: 20px;
+
+    h2 {
+        background-color: black;
+        color: white;
+        padding: 5px 3% 5px 5%;
+        width: min-content;
+    }
+}

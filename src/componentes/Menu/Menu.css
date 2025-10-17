@@ -1,0 +1,109 @@
+.navbarMenu {
+    padding: 0px;
+}
+
+.menu {
+    background-color: #000000;
+    position: sticky;
+}
+.menu .navbar-toggler {
+    background-color: #ffffff;
+}
+.enlace {
+    font-size: 25px;
+    color: #ffffff;
+    margin: 0px 5px;
+}
+
+.registroInicio {
+    display: inline;
+    font-size: 25px;
+    color: #ffffff;
+    margin: 0px;
+}
+
+.nav-link {
+    color: #ffffff !important;
+}
+
+.nav-link:hover {
+    color: rgb(84, 161, 250) !important;
+}
+
+.enlace:hover {
+    color: rgb(84, 161, 250);
+}
+
+.registroInicio:hover {
+    color: rgb(84, 161, 250);
+    text-decoration: underline;
+}
+
+Link {
+    color: #ffffff;
+    font-size: 25px;
+}
+
+.textoMenu {
+    display: inline;
+    color: #ffffff;
+    font-size: 18px;
+
+    a {
+        color: #ffffff;
+        font-size: 18px;
+    }
+}
+
+.separator {
+    color: #ffffff;
+    font-size: 25px;
+}
+
+.menu button, .menu div {
+    margin: auto;
+}
+.menu .navbar-nav {
+    margin: auto;
+}
+
+.enlaceLogo {
+    width: 12%;
+}
+
+.logoMenu {
+    width: 12%;
+    margin: 10px;
+    min-width: 150px;
+}
+
+.fotoPerfilMenu {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+.fotoPerfilMenu:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: transform 0.1s ease;
+}
+
+@media (max-width: 991px) {
+    .fotoPerfilMenu {
+        margin-bottom: 10px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1062px) {
+    .enlace {
+        font-size: 20px;
+    }
+
+    .textoMenu {
+        a {
+            font-size: 20px;
+        }
+    }
+}

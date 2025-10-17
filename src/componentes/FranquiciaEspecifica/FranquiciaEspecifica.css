@@ -1,0 +1,33 @@
+.franquiciaCabecera {
+    text-align: center;
+
+    h1 {
+        background-color: black;
+        color: white;
+        padding: 10px;
+        margin: 5px 0px;
+    }
+}
+
+.franquiciaImagen {
+    width: 100%;
+}
+
+.franquiciaLogo {
+    width: 5%;
+}
+
+.franquiciaDatos {
+    text-align: justify;
+
+    h2 {
+        background-color: black;
+        color: white;
+        padding: 5px 3% 5px 2%;
+        width: min-content;
+    }
+
+    p {
+        padding: 1% 5% 2% 5%;
+    }
+}

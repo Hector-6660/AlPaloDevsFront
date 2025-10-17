@@ -1,0 +1,74 @@
+.pie {
+    background-color: #575757;
+    color: #ffffff;
+    margin-top: 50px;
+}
+
+.pie a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.redes {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+
+    img {
+        width: 40px;
+        margin: 5px;
+    }
+
+    img:hover {
+        transform: scale(1.1);
+        transition: 0.3s;
+    }
+}
+
+.logoPie {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botonContactoArea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a {
+        color: rgb(255, 255, 255);
+    }
+}
+
+.botonContacto {
+    display: flex;
+    padding: 10px 15px;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    text-decoration: none;
+    border: 2px solid rgb(255, 255, 255);
+    font-size: 1.2rem;
+    width: fit-content;
+    text-align: center;
+}
+
+.botonContacto:hover {
+    background-color: rgb(84, 161, 250);
+    color: white;
+    border: 2px solid rgb(84, 161, 250);
+}
+
+.finPie {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .botonContacto {
+        padding: 10px 20px;
+    }
+}

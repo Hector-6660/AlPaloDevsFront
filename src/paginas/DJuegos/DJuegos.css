@@ -1,0 +1,61 @@
+h1 {
+    padding: 15px;
+    margin: 0px;
+}
+
+.listaJuegosDashboard {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    .juegoItem  {
+        display: flex;
+        align-items: center;
+        padding: 0px;
+        transition: background-color 0.2s ease;
+        border-radius: 10px;
+        margin: 0px 0px 5px 0px;
+        padding: 10px 15px 10px 15px;
+        width: 90%;
+
+        p {
+            background-color: transparent;
+            margin: 0px;
+        }
+
+        .accionesDashboard {
+            text-align: center;
+
+            button {
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.divCrearJuego {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+
+    .botonAñadirJuego {
+        display: flex;
+        padding: 10px 15px;
+        color: rgb(0, 0, 0);
+        border-radius: 10px;
+        text-decoration: none;
+        border: 2px solid black;
+        font-size: 1.2rem;
+        width: fit-content;
+        text-align: center;
+    }
+
+    .botonAñadirJuego:hover {
+        background-color: rgb(84, 161, 250);
+        border: 2px solid rgb(84, 161, 250);
+        color: white;
+    }
+}

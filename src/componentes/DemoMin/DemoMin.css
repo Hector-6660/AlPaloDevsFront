@@ -1,0 +1,28 @@
+.demoMinMargen {
+    padding: 5%;
+}
+
+.demoMin:hover {
+    transition: transform 0.1s ease-in-out;
+    transform: scale(1.05);
+
+    h3 {
+        color: rgb(84, 161, 250);
+    }
+
+    .imagenDemoMin {
+        outline: 4px solid rgb(84, 161, 250);
+    }
+}
+
+.demoMin {
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+}
+
+.imagenDemoMin {
+    width: 100%
+}

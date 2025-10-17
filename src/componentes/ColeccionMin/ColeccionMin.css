@@ -1,0 +1,78 @@
+.coleccionMinContainer {
+    margin-bottom: 20px;
+
+    .linkColeccionMin {
+        text-decoration: none;
+        color: black;
+    }
+}
+
+.coleccionMin {
+    background-color: #B0B0B0;
+    padding: 20px;
+}
+
+.coleccionMin:hover {
+    transition: all 0.1s ease-in-out;
+    background-color: #000000;
+    cursor: pointer;
+
+    .nombreColeccion {
+        background-color: white;
+        color: black;
+    }
+}
+
+.imagenColeccion {
+    width: 100%;
+}
+
+.infoColeccion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+
+    .nombreColeccion {
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        min-width: 25%;
+        padding: 10px 15px;
+        color: white;
+        background-color: black;
+        border-radius: 10px;
+
+        h3 {
+            margin: 0;
+        }
+    }
+
+    .descripcionColeccion {
+        background-color: white;
+        height: fit-content;
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .botonEliminar {
+        display: flex;
+        background-color: transparent;
+        color: rgb(255, 255, 255);
+        padding: 10px 15px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-size: 1.2rem;
+        cursor: pointer;
+        border: 2px solid rgb(255, 255, 255);
+        width: fit-content;
+        text-align: center;
+    }
+
+    .botonEliminar:hover {
+        transition: all 0.1s ease-in-out;
+        background-color: rgb(223, 49, 49);
+        border: 2px solid rgb(223, 49, 49);
+        color: white;
+    }
+}

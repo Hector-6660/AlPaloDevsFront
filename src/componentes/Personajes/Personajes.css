@@ -1,0 +1,81 @@
+.galeriaPersonajes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 350px;
+    margin-bottom: 20px;
+}
+
+.galeriaPersonajesImagenes {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1000px;
+    gap: 20px;
+}
+
+.personajeMarco {
+    width: 150px;
+    height: 275px;
+    overflow: hidden;
+    position: relative;
+    background: #000000;
+    display: flex;
+    align-items: center;
+    transition: all 0.1s ease-in-out;
+
+    img {
+        max-width: none;
+        height: auto;
+    }
+}
+
+.personajeMarco:hover {
+    height: 350px;
+}
+
+.personajeMarco:active {
+    width: 650px;
+}
+
+.personajeInfo {
+    color: white;
+    padding: 0px 10px;
+}
+
+.flecha {
+    background-color: black;
+    color: white;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 80px 10px;
+}
+
+.flecha:hover {
+    transition: all 0.1s ease-in-out;
+    background-color: rgb(84, 161, 250);
+    padding: 113px 10px;
+}
+
+.flecha:disabled {
+    padding: 90px 10px;
+    cursor: default;
+    background-color: rgb(209, 209, 209);
+}
+
+.izquierda {
+    margin-right: 5px;
+}
+
+.derecha {
+    margin-left: 5px;
+}
+
+@media (max-width: 991px) {
+    .personajeMarco:active {
+        width: 150px;
+    }
+}

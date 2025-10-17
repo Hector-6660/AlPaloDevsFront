@@ -1,0 +1,108 @@
+.juegoDesdeDemo {
+    display: flex;
+
+    .imagenJuegoDemo {
+        padding: 20px 1% 0px 10%;
+
+        img {
+            width: 80%;
+        }
+    }
+
+    .datosJuegoDemo {
+        padding-top: 20px;
+
+        .nombreJuegoDemo {
+            background-color: black;
+            border-radius: 50px;
+            width: fit-content;
+            padding: 8px 10px 8px 10px;
+            color: white;
+
+            h3 {
+                margin: 8px 10px 8px 10px;
+            }
+        }
+
+        p {
+            padding: 5% 5% 5% 0%;
+        }
+
+        .verJuegoFranquicia {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .botonVerJuego {
+                display: flex;
+                padding: 10px 15px;
+                color: rgb(0, 0, 0);
+                border-radius: 10px;
+                text-decoration: none;
+                border: 2px solid black;
+                font-size: 1.2rem;
+                width: fit-content;
+                text-align: center;
+            }
+
+            .botonVerJuego:hover {
+                background-color: rgb(84, 161, 250);
+                border: 2px solid rgb(84, 161, 250);
+                color: white;
+            }
+
+            .verFranquicia {
+                text-align: right;
+                padding-right: 10%;
+
+                img {
+                    width: 50%;
+                }
+            }
+
+            .verFranquicia img:hover {
+                transition: transform 0.1s ease-in-out;
+                transform: scale(1.05);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .juegoDesdeDemo {
+        flex-direction: column;
+
+        .imagenJuegoDemo {
+            padding: 20px;
+            text-align: center;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .datosJuegoDemo {
+            padding: 20px;
+
+            .verJuegoFranquicia {
+                flex-direction: column;
+
+                .verJuego {
+                    width: 100%;
+                    text-align: center;
+
+                    .botonVerJuego {
+                        margin: auto;
+                    }
+                }
+                
+                .verFranquicia {
+                    padding-right: 0%;
+                    text-align: center;
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+    
+}

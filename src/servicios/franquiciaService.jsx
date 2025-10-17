@@ -1,0 +1,70 @@
+const apiUrl = "http://alpalodevs.test/api/v1";
+
+export async function obtenerFranquicias() {
+  const res = await fetch(`${apiUrl}/franquicias`);
+  return await res.json();
+}
+
+export async function crearFranquicia(formData) {
+  const token = localStorage.getItem("token");
+
+  const res = await fetch(`${apiUrl}/franquicias`, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: formData,
+  });
+
+  if (!res.ok) {
+    const text = await res.text();
+    console.error("Error al crear franquicia:", text);
+    throw new Error("Error al crear la franquicia");
+  }
+
+  return await res.json();
+}
+
+export async function actualizarFranquicia(id, formData) {
+  const token = localStorage.getItem("token");
+  formData.append("_method", "PUT");
+
+  const res = await fetch(`${apiUrl}/franquicias/${id}`, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: formData,
+  });
+
+  if (!res.ok) {
+    const text = await res.text();
+    console.error("Error al actualizar franquicia:", text);
+    throw new Error("Error al actualizar la franquicia");
+  }
+
+  return await res.json();
+}
+
+export async function borrarFranquicia(id) {
+  const token = localStorage.getItem("token");
+
+  const res = await fetch(`${apiUrl}/franquicias/${id}`, {
+    method: "DELETE",
+    headers: {
+      Accept: "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
+  const data = await res.json();
+
+  if (!res.ok) {
+    console.error("Error al eliminar franquicia:", data);
+    throw new Error(data.message || "Error al eliminar la franquicia");
+  }
+
+  return data;
+}

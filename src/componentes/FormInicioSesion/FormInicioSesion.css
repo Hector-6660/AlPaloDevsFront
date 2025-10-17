@@ -1,0 +1,48 @@
+.formInicioSesion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.campo {
+    text-align: left;
+    width: 25%;
+    margin: 10px;
+}
+
+.botonInicioSesion {
+    margin: 5px;
+    display: flex;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    padding: 10px 15px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border: 2px solid rgb(0, 0, 0);
+    width: fit-content;
+    text-align: center;
+}
+
+.botonInicioSesion:hover {
+    transition: all 0.1s ease-in-out;
+    background-color: rgb(84, 161, 250);
+    border: 2px solid rgb(84, 161, 250);
+    color: white;
+}
+
+.fin {
+    margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+    .campo {
+        width: 80%;
+    }
+    .btn {
+        width: 60%;
+    }
+}
