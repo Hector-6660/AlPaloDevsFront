@@ -104,7 +104,7 @@ function FormCrearJuego() {
                                 <p>Seleccionar imagen</p>
                             </div>
                         )}
-                        <div className="overlay">Seleccionar imagen</div>
+                        <div className="overlay">Seleccionar foto</div>
                     </label>
                     <input
                         type="file"
