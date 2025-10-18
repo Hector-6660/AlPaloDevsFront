@@ -3,12 +3,12 @@ h1 {
     margin: 0px;
 }
 
-.listaJuegosDashboard {
+.listaDashboard {
     display: flex;
     flex-direction: row;
     justify-content: center;
 
-    .juegoItem  {
+    .Item  {
         display: flex;
         align-items: center;
         padding: 0px;
@@ -35,13 +35,13 @@ h1 {
     }
 }
 
-.divCrearJuego {
+.divCrear {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
 
-    .botonAñadirJuego {
+    .botonAñadir {
         display: flex;
         padding: 10px 15px;
         color: rgb(0, 0, 0);
@@ -53,7 +53,7 @@ h1 {
         text-align: center;
     }
 
-    .botonAñadirJuego:hover {
+    .botonAñadir:hover {
         background-color: rgb(84, 161, 250);
         border: 2px solid rgb(84, 161, 250);
         color: white;

@@ -25,7 +25,7 @@ function DListaJuegos() {
 
     function muestraTodosJuegos(juego) {
         return (
-            <div key={juego.id} className="col-12 juegoItem"
+            <div key={juego.id} className="col-12 Item"
                 style={{
                     backgroundColor:
                         hover.id === juego.id && hover.tipo === "editar"
@@ -68,13 +68,13 @@ function DListaJuegos() {
                 {listajuegos.buscando ? (
                     <AjaxLoader />
                 ) : (
-                    <div className="row listaJuegosDashboard">
+                    <div className="row listaDashboard">
                         {listajuegos.lista.map(muestraTodosJuegos)}
                     </div>
                 )}
             </div>
-            <div className="row col-12 divCrearJuego">
-                <Link to="/dashboard/juegos/nuevo" className="botonAñadirJuego">
+            <div className="row col-12 divCrear">
+                <Link to="/dashboard/juegos/nuevo" className="botonAñadir">
                     Agregar Juego
                 </Link>
             </div>

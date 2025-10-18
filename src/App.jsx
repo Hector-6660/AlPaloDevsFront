@@ -28,6 +28,7 @@ import DJuegosE from './paginas/DJuegosE/DJuegosE'
 import DFranquicias from './paginas/DFranquicias/DFranquicias'
 import DFranquiciasC from './paginas/DFranquiciasC/DFranquiciasC'
 import DFranquiciasE from './paginas/DFranquiciasE/DFranquiciasE'
+import DPersonajes from './paginas/DPersonajes/DPersonajes'
 import './App.css'
 
 function App() {
@@ -71,7 +72,7 @@ function App() {
         <Route path="/dashboard/franquicias/:id" element={<ProtectedRoute role="admin"><DFranquiciasE></DFranquiciasE></ProtectedRoute>} />
         <Route path="/dashboard/franquicias/nuevo" element={<ProtectedRoute role="admin"><DFranquiciasC></DFranquiciasC></ProtectedRoute>} />
 
-        <Route path="/dashboard/personajes" element={<ProtectedRoute role="admin"><Inicio></Inicio></ProtectedRoute>} />
+        <Route path="/dashboard/personajes" element={<ProtectedRoute role="admin"><DPersonajes></DPersonajes></ProtectedRoute>} />
         <Route path="/dashboard/personajes/:id" element={<ProtectedRoute role="admin"><Inicio></Inicio></ProtectedRoute>} />
         <Route path="/dashboard/personajes/nuevo" element={<ProtectedRoute role="admin"><Inicio></Inicio></ProtectedRoute>} />
       </Routes>

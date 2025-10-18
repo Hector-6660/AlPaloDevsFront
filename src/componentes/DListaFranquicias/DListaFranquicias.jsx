@@ -25,7 +25,7 @@ function DListaFranquicias() {
 
     function muestraTodosFranquicias(franquicia) {
         return (
-            <div key={franquicia.id} className="col-12 juegoItem"
+            <div key={franquicia.id} className="col-12 Item"
                 style={{
                     backgroundColor:
                         hover.id === franquicia.id && hover.tipo === "editar"
@@ -68,13 +68,13 @@ function DListaFranquicias() {
                 {listafranquicias.buscando ? (
                     <AjaxLoader />
                 ) : (
-                    <div className="row listaJuegosDashboard">
+                    <div className="row listaDashboard">
                         {listafranquicias.lista.map(muestraTodosFranquicias)}
                     </div>
                 )}
             </div>
-            <div className="row col-12 divCrearJuego">
-                <Link to="/dashboard/franquicias/nuevo" className="botonAñadirJuego">
+            <div className="row col-12 divCrear">
+                <Link to="/dashboard/franquicias/nuevo" className="botonAñadir">
                     Agregar Franquicia
                 </Link>
             </div>
