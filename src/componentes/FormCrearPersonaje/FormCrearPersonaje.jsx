@@ -4,7 +4,8 @@ import { crearPersonaje } from "../../servicios/personajeService";
 function FormCrearPersonaje() {
     const [form, setForm] = useState({
         nombre: "",
-        descripcion: ""
+        descripcion: "",
+        franquicia_id: ""
     });
 
     const [fotoPreview, setFotoPreview] = useState("");
@@ -33,6 +34,7 @@ function FormCrearPersonaje() {
             const formData = new FormData();
             formData.append("nombre", form.nombre);
             formData.append("descripcion", form.descripcion);
+            formData.append("franquicia_id", form.franquicia_id);
 
             if (fotoFile) {
                 formData.append("imagen", fotoFile);
@@ -40,7 +42,7 @@ function FormCrearPersonaje() {
 
             const token = localStorage.getItem("token");
 
-            const res = await fetch("http://alpalodevs.test/api/v1/juegos", {
+            const res = await fetch("http://alpalodevs.test/api/v1/personajes", {
                 method: "POST",
                 headers: {
                     Accept: "application/json",
@@ -52,17 +54,18 @@ function FormCrearPersonaje() {
             const data = await res.json();
 
             if (res.ok) {
-                alert("Juego subido con éxito");
+                alert("Personaje subido con éxito");
                 // Reiniciar formulario
                 setForm({
                     nombre: "",
-                    descripcion: ""
+                    descripcion: "",
+                    franquicia_id: ""
                 });
                 setFotoPreview("");
                 setFotoFile(null);
             } else {
-                console.error("Error al subir el juego:", data);
-                alert(data.message || "Error al subir el juego");
+                console.error("Error al subir el personaje:", data);
+                alert(data.message || "Error al subir el personaje");
             }
         } catch (error) {
             console.error(error);
@@ -71,33 +74,33 @@ function FormCrearPersonaje() {
     };
 
     return (
-        <form className="formJuego" onSubmit={handleSubmit}>
+        <form className="formPersonaje" onSubmit={handleSubmit}>
             <div className="row col-12">
                 <div className="col-6 col-md-3">
-                    <label htmlFor="imagenJuego" className="imagenJuegoLabel">
+                    <label htmlFor="imagenPersonaje" className="imagenPersonajeLabel">
                         {fotoPreview ? (
                             <img
                                 src={fotoPreview}
-                                alt="Portada del juego"
-                                className="imagenFormJuego"
+                                alt="Portada del personaje"
+                                className="imagenFormPersonaje"
                             />
                         ) : (
                             <div className="cuadroImagen">
-                                <p>Seleccionar logo</p>
+                                <p>Seleccionar imagen</p>
                             </div>
                         )}
-                        <div className="overlay">Seleccionar logo</div>
+                        <div className="overlay">Seleccionar imagen</div>
                     </label>
                     <input
                         type="file"
-                        id="imagenJuego"
+                        id="imagenPersonaje"
                         accept="image/*"
                         onChange={handleFileChange}
                         style={{ display: "none" }}
                     />
                 </div>
-                <div className="col-6 col-md-9 infoPrincipalFormJuego">
-                    <div className="col-12 nombreFormJuego">
+                <div className="col-6 col-md-9 infoPrincipalFormPersonaje">
+                    <div className="col-12 nombreFormPersonaje">
                         <label htmlFor="nombre">Nombre:</label>
                         <input
                             type="text"
@@ -109,13 +112,13 @@ function FormCrearPersonaje() {
                             className="form-control"
                         />
                     </div>
-                    <div className="col-12 descripcionFormJuego">
+                    <div className="col-12 descripcionFormPersonaje">
                         <label htmlFor="descripcion">Descripción:</label>
                         <textarea
                             id="descripcion"
                             name="descripcion"
                             required
-                            placeholder="Describe brevemente el juego..."
+                            placeholder="Describe brevemente el personaje..."
                             value={form.descripcion}
                             onChange={handleChange}
                             className="form-control"
@@ -124,35 +127,25 @@ function FormCrearPersonaje() {
                 </div>
             </div>
 
-            <div className="row col-12 infoSecundariaFormJuego">
-                <div className="col-12">
-                    <label htmlFor="imagenJuego" className="imagenJuegoLabel">
-                        {fotoPreview ? (
-                            <img
-                                src={fotoPreview}
-                                alt="Portada del juego"
-                                className="imagenFormJuego"
-                            />
-                        ) : (
-                            <div className="cuadroImagen">
-                                <p>Seleccionar imagen</p>
-                            </div>
-                        )}
-                        <div className="overlay">Seleccionar imagen</div>
-                    </label>
-                    <input
-                        type="file"
-                        id="imagenJuego"
-                        accept="image/*"
-                        onChange={handleFileChange}
-                        style={{ display: "none" }}
-                    />
+            <div className="row col-12 infoSecundariaFormPersonaje">
+                <div className="col-12 infoAdicionalFormPersonaje">
+                    <div className="col-6">
+                        <label htmlFor="franquicia_id">ID de la franquicia:</label>
+                        <input
+                            type="number"
+                            id="franquicia_id"
+                            name="franquicia_id"
+                            value={form.franquicia_id}
+                            onChange={handleChange}
+                            className="form-control"
+                        />
+                    </div>
                 </div>
             </div>
 
-            <div className="row col-12 divBotonGuardarCambiosJuego">
-                <button type="submit" className="botonGuardarCambiosJuego">
-                    Subir Juego
+            <div className="row col-12 divBotonGuardarCambiosPersonaje">
+                <button type="submit" className="botonGuardarCambiosPersonaje">
+                    Subir Personaje
                 </button>
             </div>
         </form>

@@ -75,7 +75,6 @@ function FormEditarFranquicia({ idFranquiciaPantalla }) {
     return (
         <form className="formFranquicia" onSubmit={handleSubmit}>
             <div className="row col-12">
-                {/* LOGO */}
                 <div className="col-6 col-md-3 divLogoFormFranquicia">
                     <label htmlFor="logoFranquicia" className="logoFranquiciaLabel">
                         {logoPreview ? (
@@ -100,7 +99,6 @@ function FormEditarFranquicia({ idFranquiciaPantalla }) {
                     />
                 </div>
 
-                {/* DATOS PRINCIPALES */}
                 <div className="col-6 col-md-9 infoPrincipalFormFranquicia">
                     <div className="col-12 nombreFormFranquicia">
                         <label htmlFor="nombre">Nombre:</label>
@@ -130,7 +128,6 @@ function FormEditarFranquicia({ idFranquiciaPantalla }) {
                 </div>
             </div>
 
-            {/* IMAGEN PRINCIPAL */}
             <div className="row col-12 infoSecundariaFormFranquicia">
                 <div className="col-12">
                     <div className="divImagenFormFranquicia">
@@ -159,7 +156,6 @@ function FormEditarFranquicia({ idFranquiciaPantalla }) {
                 </div>
             </div>
 
-            {/* BOTÓN GUARDAR */}
             <div className="row col-12 divBotonGuardarCambiosFranquicia">
                 <button type="submit" className="botonGuardarCambiosFranquicia">
                     Guardar cambios
