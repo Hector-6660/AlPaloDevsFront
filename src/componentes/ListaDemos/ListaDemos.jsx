@@ -1,11 +1,15 @@
 import React from "react";
 import useAllDemos from "../../hooks/useAllDemos";
+import usePagination from "../../hooks/usePaginacion";
 import DemoMin from "../DemoMin/DemoMin";
+import Paginacion from "../Paginacion/Paginacion";
 import AjaxLoader from "../AjaxLoader/AjaxLoader";
 import './ListaDemos.css';
 
 function ListaDemos(props) {
     const listademos = useAllDemos();
+    const { currentItems, currentPage, totalPages, nextPage, prevPage, goToPage } = usePagination(listademos.lista, 9);
+
 
     function muestraTodosDemos(demo) {
         return (
@@ -18,9 +22,25 @@ function ListaDemos(props) {
             {listademos.buscando ? (
                 <AjaxLoader />
             ) : (
-                <div className="row">
-                    {listademos.lista.map(muestraTodosDemos)}
-                </div>
+                <>
+                    <Paginacion
+                        currentPage={currentPage}
+                        totalPages={totalPages}
+                        nextPage={nextPage}
+                        prevPage={prevPage}
+                        goToPage={goToPage}
+                    />
+                    <div className="row">
+                        {currentItems.map(muestraTodosDemos)}
+                    </div>
+                    <Paginacion
+                        currentPage={currentPage}
+                        totalPages={totalPages}
+                        nextPage={nextPage}
+                        prevPage={prevPage}
+                        goToPage={goToPage}
+                    />
+                </>
             )}
         </div>
     );

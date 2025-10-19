@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import useAllPersonajes from "../../hooks/useAllPersonajes";
+import usePagination from "../../hooks/usePaginacion";
 import { borrarPersonaje } from "../../servicios/personajeService";
+import Paginacion from "../Paginacion/Paginacion";
 import AjaxLoader from "../AjaxLoader/AjaxLoader";
 
 function DListaPersonajes() {
     const listapersonajes = useAllPersonajes();
     const [hover, setHover] = useState({ id: null, tipo: null });
     const [personajes, setPersonajes] = useState([]);
+
+    const { currentItems, currentPage, totalPages, nextPage, prevPage, goToPage } = usePagination(listapersonajes.lista, 9);
 
     const handleEliminar = async (id) => {
         if (!confirm("¿Seguro que deseas eliminar este personaje?")) return;
@@ -68,9 +72,18 @@ function DListaPersonajes() {
                 {listapersonajes.buscando ? (
                     <AjaxLoader />
                 ) : (
-                    <div className="row listaDashboard">
-                        {listapersonajes.lista.map(muestraTodosPersonajes)}
-                    </div>
+                    <>
+                        <div className="row listaDashboard">
+                            {currentItems.map(muestraTodosPersonajes)}
+                        </div>
+                        <Paginacion
+                            currentPage={currentPage}
+                            totalPages={totalPages}
+                            nextPage={nextPage}
+                            prevPage={prevPage}
+                            goToPage={goToPage}
+                        />
+                    </>
                 )}
             </div>
             <div className="row col-12 divCrear">

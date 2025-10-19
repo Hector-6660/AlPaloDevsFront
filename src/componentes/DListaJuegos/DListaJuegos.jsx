@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import useAllJuegos from "../../hooks/useAllJuegos";
+import usePagination from "../../hooks/usePaginacion";
 import { borrarJuego } from "../../servicios/juegoService";
+import Paginacion from "../Paginacion/Paginacion";
 import AjaxLoader from "../AjaxLoader/AjaxLoader";
 
 function DListaJuegos() {
     const listajuegos = useAllJuegos();
     const [hover, setHover] = useState({ id: null, tipo: null });
     const [juegos, setJuegos] = useState([]);
+
+    const { currentItems, currentPage, totalPages, nextPage, prevPage, goToPage } = usePagination(listajuegos.lista, 9);
 
     const handleEliminar = async (id) => {
         if (!confirm("¿Seguro que deseas eliminar este juego?")) return;
@@ -68,9 +72,18 @@ function DListaJuegos() {
                 {listajuegos.buscando ? (
                     <AjaxLoader />
                 ) : (
-                    <div className="row listaDashboard">
-                        {listajuegos.lista.map(muestraTodosJuegos)}
-                    </div>
+                    <>
+                        <div className="row listaDashboard">
+                            {currentItems.map(muestraTodosJuegos)}
+                        </div>
+                        <Paginacion
+                            currentPage={currentPage}
+                            totalPages={totalPages}
+                            nextPage={nextPage}
+                            prevPage={prevPage}
+                            goToPage={goToPage}
+                        />
+                    </>
                 )}
             </div>
             <div className="row col-12 divCrear">

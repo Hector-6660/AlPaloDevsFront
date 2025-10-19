@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import useAllFranquicias from "../../hooks/useAllFranquicias";
+import usePagination from "../../hooks/usePaginacion";
 import { borrarFranquicia } from "../../servicios/franquiciaService";
+import Paginacion from "../Paginacion/Paginacion";
 import AjaxLoader from "../AjaxLoader/AjaxLoader";
 
 function DListaFranquicias() {
     const listafranquicias = useAllFranquicias();
     const [hover, setHover] = useState({ id: null, tipo: null });
     const [franquicias, setFranquicias] = useState([]);
+
+    const { currentItems, currentPage, totalPages, nextPage, prevPage, goToPage } = usePagination(listafranquicias.lista, 9);
 
     const handleEliminar = async (id) => {
         if (!confirm("¿Seguro que deseas eliminar esta franquicia?")) return;
@@ -68,9 +72,18 @@ function DListaFranquicias() {
                 {listafranquicias.buscando ? (
                     <AjaxLoader />
                 ) : (
-                    <div className="row listaDashboard">
-                        {listafranquicias.lista.map(muestraTodosFranquicias)}
-                    </div>
+                    <>
+                        <div className="row listaDashboard">
+                            {currentItems.map(muestraTodosFranquicias)}
+                        </div>
+                        <Paginacion
+                            currentPage={currentPage}
+                            totalPages={totalPages}
+                            nextPage={nextPage}
+                            prevPage={prevPage}
+                            goToPage={goToPage}
+                        />
+                    </>
                 )}
             </div>
             <div className="row col-12 divCrear">
