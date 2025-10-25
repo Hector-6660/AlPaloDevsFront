@@ -1,9 +1,9 @@
 const apiUrl = "http://alpalodevs.test/api/v1";
 
-export async function crearPersonaje(formData) {
+export async function crearDemo(formData) {
   const token = localStorage.getItem("token");
 
-  const res = await fetch(`${apiUrl}/personajes`, {
+  const res = await fetch(`${apiUrl}/demos`, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -14,18 +14,18 @@ export async function crearPersonaje(formData) {
 
   if (!res.ok) {
     const text = await res.text();
-    console.error("Error al crear personaje:", text);
-    throw new Error("Error al crear el personaje");
+    console.error("Error al crear demo:", text);
+    throw new Error("Error al crear la demo");
   }
 
   return await res.json();
 }
 
-export async function actualizarPersonaje(id, formData) {
+export async function actualizarDemo(id, formData) {
   const token = localStorage.getItem("token");
   formData.append("_method", "PUT");
 
-  const res = await fetch(`${apiUrl}/personajes/${id}`, {
+  const res = await fetch(`${apiUrl}/demos/${id}`, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -36,17 +36,17 @@ export async function actualizarPersonaje(id, formData) {
 
   if (!res.ok) {
     const text = await res.text();
-    console.error("Error al actualizar personaje:", text);
-    throw new Error("Error al actualizar el personaje");
+    console.error("Error al actualizar demo:", text);
+    throw new Error("Error al actualizar la demo");
   }
 
   return await res.json();
 }
 
-export async function borrarPersonaje(id) {
+export async function borrarDemo(id) {
   const token = localStorage.getItem("token");
 
-  const res = await fetch(`${apiUrl}/personajes/${id}`, {
+  const res = await fetch(`${apiUrl}/demos/${id}`, {
     method: "DELETE",
     headers: {
       Accept: "application/json",
@@ -57,8 +57,8 @@ export async function borrarPersonaje(id) {
   const data = await res.json();
 
   if (!res.ok) {
-    console.error("Error al eliminar personaje:", data);
-    throw new Error(data.message || "Error al eliminar el personaje");
+    console.error("Error al eliminar demo:", data);
+    throw new Error(data.message || "Error al eliminar la demo");
   }
 
   return data;

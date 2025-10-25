@@ -1,10 +1,5 @@
 const apiUrl = "http://alpalodevs.test/api/v1";
 
-export async function obtenerJuegos() {
-  const res = await fetch(`${apiUrl}/juegos`);
-  return await res.json();
-}
-
 export async function crearJuego(data) {
   const res = await fetch(`${apiUrl}/juegos`, {
     method: "POST",

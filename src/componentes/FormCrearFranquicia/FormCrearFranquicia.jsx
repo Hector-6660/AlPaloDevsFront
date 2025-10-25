@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { crearFranquicia } from "../../servicios/franquiciaService";
+import "./FormCrearFranquicia.css";
 
 function FormCrearFranquicia() {
     const [form, setForm] = useState({
@@ -37,37 +39,22 @@ function FormCrearFranquicia() {
             const formData = new FormData();
             formData.append("nombre", form.nombre);
             formData.append("descripcion", form.descripcion);
-
             if (logoFile) formData.append("logo", logoFile);
             if (imagenFile) formData.append("imagen", imagenFile);
 
-            const token = localStorage.getItem("token");
+            const res = await crearFranquicia(formData);
 
-            const res = await fetch("http://alpalodevs.test/api/v1/franquicias", {
-                method: "POST",
-                headers: {
-                Accept: "application/json",
-                Authorization: `Bearer ${token}`,
-                },
-                body: formData,
-            });
+            alert("Franquicia creada con éxito");
+            console.log("Respuesta servidor:", res);
 
-            const data = await res.json();
-
-            if (res.ok) {
-                alert("Franquicia subida con éxito");
-                setForm({ nombre: "", descripcion: "" });
-                setLogoFile(null);
-                setImagenFile(null);
-                setLogoPreview("");
-                setImagenPreview("");
-            } else {
-                console.error("Error:", data);
-                alert(data.message || "Error al subir la franquicia");
-            }
+            setForm({ nombre: "", descripcion: "" });
+            setLogoFile(null);
+            setImagenFile(null);
+            setLogoPreview("");
+            setImagenPreview("");
         } catch (error) {
             console.error(error);
-            alert("Error al enviar el formulario");
+            alert("Error al crear la franquicia");
         }
     };
 

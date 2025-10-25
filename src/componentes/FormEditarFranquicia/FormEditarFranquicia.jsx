@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import useOneFranquicia from "../../hooks/useOneFranquicia";
 import { actualizarFranquicia } from "../../servicios/franquiciaService";
-import "./FormEditarFranquicia.css";
 
 function FormEditarFranquicia({ idFranquiciaPantalla }) {
     const idFranquicia = useOneFranquicia(idFranquiciaPantalla);

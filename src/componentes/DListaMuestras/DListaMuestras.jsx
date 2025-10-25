@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import useAllMuestras from "../../hooks/useAllMuestras";
-import { borrarMuestra } from "../../servicios/muestraService";
+import useAllDemos from "../../hooks/useAllDemos";
+import { borrarDemo } from "../../servicios/muestraService";
 import AjaxLoader from "../AjaxLoader/AjaxLoader";
 
 function DListaMuestras() {
-    const listamuestras = useAllMuestras();
+    const listamuestras = useAllDemos();
     const [hover, setHover] = useState({ id: null, tipo: null });
     const [muestras, setMuestras] = useState([]);
 
@@ -13,7 +13,7 @@ function DListaMuestras() {
         if (!confirm("¿Seguro que deseas eliminar esta demo?")) return;
 
         try {
-            await borrarMuestra(id);
+            await borrarDemo(id);
             alert("Demo eliminada correctamente");
             // Quita la demo eliminada del estado local sin recargar
             setMuestras((prev) => prev.filter((m) => m.id !== id));
@@ -82,4 +82,4 @@ function DListaMuestras() {
     );
 }
 
-export default DListaJuegos;
+export default DListaMuestras;

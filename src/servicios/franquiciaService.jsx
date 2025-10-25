@@ -1,10 +1,5 @@
 const apiUrl = "http://alpalodevs.test/api/v1";
 
-export async function obtenerFranquicias() {
-  const res = await fetch(`${apiUrl}/franquicias`);
-  return await res.json();
-}
-
 export async function crearFranquicia(formData) {
   const token = localStorage.getItem("token");
 

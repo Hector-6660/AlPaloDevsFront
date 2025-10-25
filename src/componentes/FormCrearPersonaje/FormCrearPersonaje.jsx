@@ -32,44 +32,22 @@ function FormCrearPersonaje() {
 
         try {
             const formData = new FormData();
-            formData.append("nombre", form.nombre);
-            formData.append("descripcion", form.descripcion);
-            formData.append("franquicia_id", form.franquicia_id);
+            Object.entries(form).forEach(([key, value]) =>
+                formData.append(key, value)
+            );
+            if (fotoFile) formData.append("imagen", fotoFile);
 
-            if (fotoFile) {
-                formData.append("imagen", fotoFile);
-            }
+            const res = await crearPersonaje(formData);
 
-            const token = localStorage.getItem("token");
+            alert("Personaje creado con éxito");
+            console.log("Respuesta servidor:", res);
 
-            const res = await fetch("http://alpalodevs.test/api/v1/personajes", {
-                method: "POST",
-                headers: {
-                    Accept: "application/json",
-                    Authorization: `Bearer ${token}`,
-                },
-                body: formData,
-            });
-
-            const data = await res.json();
-
-            if (res.ok) {
-                alert("Personaje subido con éxito");
-                // Reiniciar formulario
-                setForm({
-                    nombre: "",
-                    descripcion: "",
-                    franquicia_id: ""
-                });
-                setFotoPreview("");
-                setFotoFile(null);
-            } else {
-                console.error("Error al subir el personaje:", data);
-                alert(data.message || "Error al subir el personaje");
-            }
+            setForm({ nombre: "", descripcion: "", franquicia_id: "" });
+            setFotoPreview("");
+            setFotoFile(null);
         } catch (error) {
             console.error(error);
-            alert("Error al enviar el formulario");
+            alert("Error al crear el personaje");
         }
     };
 

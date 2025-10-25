@@ -37,54 +37,32 @@ function FormCrearJuego() {
 
         try {
             const formData = new FormData();
-            formData.append("nombre", form.nombre);
-            formData.append("descripcion", form.descripcion);
-            formData.append("fecha_lanzamiento", form.fecha_lanzamiento);
-            formData.append("plataforma", form.plataforma);
-            formData.append("genero", form.genero);
-            formData.append("autor", form.autor);
-            formData.append("franquicia_id", form.franquicia_id || null);
-            formData.append("tiene_demo", form.tiene_demo === "1" ? 1 : 0);
-
-            if (fotoFile) {
-                formData.append("imagen", fotoFile);
-            }
-
-            const token = localStorage.getItem("token");
-
-            const res = await fetch("http://alpalodevs.test/api/v1/juegos", {
-                method: "POST",
-                headers: {
-                    Accept: "application/json",
-                    Authorization: `Bearer ${token}`,
-                },
-                body: formData,
+            Object.entries(form).forEach(([key, value]) => {
+                formData.append(key, value);
             });
+            if (fotoFile) formData.append("imagen", fotoFile);
 
-            const data = await res.json();
+            const res = await crearJuego(formData);
 
-            if (res.ok) {
-                alert("Juego subido con éxito");
-                // Reiniciar formulario
-                setForm({
-                    nombre: "",
-                    descripcion: "",
-                    fecha_lanzamiento: "",
-                    plataforma: "",
-                    genero: "",
-                    autor: "",
-                    franquicia_id: "",
-                    tiene_demo: "0",
-                });
-                setFotoPreview("");
-                setFotoFile(null);
-            } else {
-                console.error("Error al subir el juego:", data);
-                alert(data.message || "Error al subir el juego");
-            }
+            alert("Juego creado con éxito");
+            console.log("Respuesta servidor:", res);
+
+            // Reiniciar formulario
+            setForm({
+                nombre: "",
+                descripcion: "",
+                fecha_lanzamiento: "",
+                plataforma: "",
+                genero: "",
+                autor: "",
+                franquicia_id: "",
+                tiene_demo: "0",
+            });
+            setFotoPreview("");
+            setFotoFile(null);
         } catch (error) {
             console.error(error);
-            alert("Error al enviar el formulario");
+            alert("Error al crear el juego");
         }
     };
 

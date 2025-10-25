@@ -1,26 +1,20 @@
-.formFranquicia {
+.formMuestra {
     display: flex;
     flex-direction: column;
     gap: 15px;
     padding: 0px 50px 0px 50px;
 
-    .divLogoFormFranquicia {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .logoFranquiciaLabel {
+    .imagenMuestraLabel {
         position: relative;
         display: inline-block;
-        width: 301px;
+        width: 70%;
     }
 
-    .logoFormFranquicia {
+    .imagenFormMuestra {
         width: 100%;
     }
 
-    .cuadroLogo {
+    .cuadroImagen {
         width: 100%;
         background-color: lightgrey;
         height: 301px;
@@ -52,58 +46,23 @@
         text-align: center;
     }
 
-    .logoFranquiciaLabel:hover .overlay {
+    .imagenMuestraLabel:hover .overlay {
         opacity: 1;
     }
 
-    .divImagenFormFranquicia {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .imagenFranquiciaLabel {
-        position: relative;
-        display: inline-block;
-        width: 509px;
-    }
-
-    .imagenFormFranquicia {
-        width: 100%;
-    }
-
-    .cuadroImagen {
-        width: 100%;
-        background-color: lightgrey;
-        height: 301px;
-        max-height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        p {
-            text-align: center;
-            margin: 0px;
-        }
-    }
-
-    .imagenFranquiciaLabel:hover .overlay {
-        opacity: 1;
-    }
-
-    .infoPrincipalFormFranquicia {
+    .infoPrincipalFormMuestra {
         display: flex;
         flex-direction: column;
         justify-content: center;
         gap: 5px;
-
-        .nombreFormFranquicia {
+    
+        .nombreFormMuestra {
             display: flex;
             flex-direction: column;
             gap: 5px;
         }
 
-        .descripcionFormFranquicia {
+        .descripcionFormMuestra {
             display: flex;
             flex-direction: column;
             gap: 5px;
@@ -114,13 +73,13 @@
         }
     }
 
-    .infoSecundariaFormFranquicia {
+    .infoSecundariaFormMuestra {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: center;
         gap: 10px;
-
-        .infoAdicionalFormFranquicia {
+    
+        .infoAdicionalFormMuestra {
             display: flex;
             flex-direction: row;
             justify-content: center;
@@ -134,12 +93,12 @@
         }
     }
 
-    .divBotonGuardarCambiosFranquicia {
+    .divBotonGuardarCambiosMuestra {
         display: flex;
         justify-content: center;
         margin-top: 10px;
 
-        .botonGuardarCambiosFranquicia {
+        .botonGuardarCambiosMuestra {
             padding: 10px 15px;
             color: rgb(0, 0, 0);
             border-radius: 10px;
@@ -150,7 +109,7 @@
             background-color: transparent;
         }
 
-        .botonGuardarCambiosFranquicia:hover {
+        .botonGuardarCambiosMuestra:hover {
             background-color: rgb(45, 224, 45);
             color: white;
             border: 2px solid rgb(45, 224, 45);

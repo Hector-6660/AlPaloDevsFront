@@ -1,7 +1,7 @@
 import React from "react";
 
 function getOneMuestra(muestraId) {
-    const apiUrl = `http://alpalodevs.test/api/v1/muestras/${muestraId}`;
+    const apiUrl = `http://alpalodevs.test/api/v1/demos/${muestraId}`;
 
     return fetch(apiUrl)
         .then((response) => response.json())

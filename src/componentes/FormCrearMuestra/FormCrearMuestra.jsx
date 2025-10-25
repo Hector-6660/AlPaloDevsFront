@@ -1,20 +1,17 @@
 import React, { useState } from "react";
-import { crearJuego } from "../../servicios/juegoService";
+import { crearDemo } from "../../servicios/muestraService";
+import "./FormCrearMuestra.css";
 
-function FormCrearJuego() {
+function FormCrearMuestra() {
     const [form, setForm] = useState({
         nombre: "",
-        descripcion: "",
-        fecha_lanzamiento: "",
-        plataforma: "",
-        genero: "",
-        autor: "",
-        franquicia_id: "",
-        tiene_demo: "0",
+        mainScript: "",
+        juego_id: "",
     });
 
     const [fotoPreview, setFotoPreview] = useState("");
     const [fotoFile, setFotoFile] = useState(null);
+    const [zipFile, setZipFile] = useState(null);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -25,11 +22,21 @@ function FormCrearJuego() {
     };
 
     const handleFileChange = (e) => {
-        if (e.target.files && e.target.files[0]) {
-            const file = e.target.files[0];
-            setFotoFile(file);
-            setFotoPreview(URL.createObjectURL(file));
+        const file = e.target.files?.[0];
+        if (!file) return;
+        setFotoFile(file);
+        setFotoPreview(URL.createObjectURL(file));
+    };
+
+    const handleZipChange = (e) => {
+        const file = e.target.files?.[0];
+        if (!file) return;
+
+        if (!file.name.endsWith(".zip")) {
+            alert("Por favor, selecciona un archivo ZIP válido");
+            return;
         }
+        setZipFile(file);
     };
 
     const handleSubmit = async (e) => {
@@ -38,84 +45,57 @@ function FormCrearJuego() {
         try {
             const formData = new FormData();
             formData.append("nombre", form.nombre);
-            formData.append("descripcion", form.descripcion);
-            formData.append("fecha_lanzamiento", form.fecha_lanzamiento);
-            formData.append("plataforma", form.plataforma);
-            formData.append("genero", form.genero);
-            formData.append("autor", form.autor);
-            formData.append("franquicia_id", form.franquicia_id || null);
-            formData.append("tiene_demo", form.tiene_demo === "1" ? 1 : 0);
+            formData.append("mainScript", form.mainScript);
+            formData.append("juego_id", form.juego_id);
 
-            if (fotoFile) {
-                formData.append("imagen", fotoFile);
-            }
+            if (fotoFile) formData.append("imagen", fotoFile);
+            if (zipFile) formData.append("carpeta_demo", zipFile);
 
-            const token = localStorage.getItem("token");
+            const res = await crearDemo(formData);
 
-            const res = await fetch("http://alpalodevs.test/api/v1/juegos", {
-                method: "POST",
-                headers: {
-                    Accept: "application/json",
-                    Authorization: `Bearer ${token}`,
-                },
-                body: formData,
-            });
+            alert("Demo creada con éxito");
+            console.log("Respuesta servidor:", res);
 
-            const data = await res.json();
-
-            if (res.ok) {
-                alert("Juego subido con éxito");
-                // Reiniciar formulario
-                setForm({
-                    nombre: "",
-                    descripcion: "",
-                    fecha_lanzamiento: "",
-                    plataforma: "",
-                    genero: "",
-                    autor: "",
-                    franquicia_id: "",
-                    tiene_demo: "0",
-                });
-                setFotoPreview("");
-                setFotoFile(null);
-            } else {
-                console.error("Error al subir el juego:", data);
-                alert(data.message || "Error al subir el juego");
-            }
+            // Reset formulario
+            setForm({ nombre: "", mainScript: "", juego_id: "" });
+            setFotoPreview("");
+            setFotoFile(null);
+            setZipFile(null);
         } catch (error) {
             console.error(error);
-            alert("Error al enviar el formulario");
+            alert("Error al crear la demo");
         }
     };
 
     return (
-        <form className="formJuego" onSubmit={handleSubmit}>
+        <form className="formMuestra" onSubmit={handleSubmit}>
             <div className="row col-12">
                 <div className="col-6 col-md-3">
-                    <label htmlFor="imagenJuego" className="imagenJuegoLabel">
+                    <label htmlFor="imagenDemo" className="imagenMuestraLabel">
                         {fotoPreview ? (
                             <img
                                 src={fotoPreview}
-                                alt="Portada del juego"
-                                className="imagenFormJuego"
+                                alt="Portada de la demo"
+                                className="imagenFormMuestra"
                             />
                         ) : (
                             <div className="cuadroImagen">
                                 <p>Seleccionar imagen</p>
                             </div>
                         )}
-                        <div className="overlay">Seleccionar foto</div>
+                        <div className="overlay">Seleccionar imagen</div>
                     </label>
                     <input
                         type="file"
-                        id="imagenJuego"
+                        id="imagenDemo"
                         accept="image/*"
                         onChange={handleFileChange}
                         style={{ display: "none" }}
                     />
                 </div>
-                <div className="col-6 col-md-9 infoPrincipalFormJuego">
-                    <div className="col-12 nombreFormJuego">
+
+                <div className="col-6 col-md-9 infoPrincipalFormMuestra">
+                    <div className="col-12 nombreFormMuestra">
                         <label htmlFor="nombre">Nombre:</label>
                         <input
                             type="text"
@@ -127,124 +107,58 @@ function FormCrearJuego() {
                             className="form-control"
                         />
                     </div>
-                    <div className="col-12 descripcionFormJuego">
-                        <label htmlFor="descripcion">Descripción:</label>
-                        <textarea
-                            id="descripcion"
-                            name="descripcion"
-                            required
-                            placeholder="Describe brevemente el juego..."
-                            value={form.descripcion}
-                            onChange={handleChange}
-                            className="form-control"
-                        ></textarea>
-                    </div>
-                </div>
-            </div>
 
-            <div className="row col-12 infoSecundariaFormJuego">
-                <div className="col-12">
-                    <label htmlFor="fecha_lanzamiento">Fecha de lanzamiento:</label>
-                    <input
-                        type="date"
-                        id="fecha_lanzamiento"
-                        name="fecha_lanzamiento"
-                        required
-                        value={form.fecha_lanzamiento}
-                        onChange={handleChange}
-                        className="form-control"
-                    />
-                </div>
-                <div className="col-12">
-                    <label htmlFor="plataforma">Plataforma:</label>
-                    <input
-                        type="text"
-                        id="plataforma"
-                        name="plataforma"
-                        required
-                        value={form.plataforma}
-                        onChange={handleChange}
-                        className="form-control"
-                    />
-                </div>
-                <div className="col-12">
-                    <label htmlFor="genero">Género:</label>
-                    <input
-                        type="text"
-                        id="genero"
-                        name="genero"
-                        required
-                        value={form.genero}
-                        onChange={handleChange}
-                        className="form-control"
-                    />
-                </div>
-                <div className="col-12">
-                    <label htmlFor="autor">Autor:</label>
-                    <input
-                        type="text"
-                        id="autor"
-                        name="autor"
-                        required
-                        value={form.autor}
-                        onChange={handleChange}
-                        className="form-control"
-                    />
-                </div>
-
-                <div className="col-12 infoAdicionalFormJuego">
                     <div className="col-6">
-                        <label htmlFor="franquicia_id">ID de la franquicia:</label>
+                        <label htmlFor="juego_id">ID del juego:</label>
                         <input
                             type="number"
-                            id="franquicia_id"
-                            name="franquicia_id"
-                            value={form.franquicia_id}
+                            id="juego_id"
+                            name="juego_id"
+                            required
+                            value={form.juego_id}
                             onChange={handleChange}
                             className="form-control"
                         />
                     </div>
-                    <div className="col-6">
-                        <label htmlFor="tieneDemo">¿Tiene demo?</label>
-                        <div className="form-check">
-                            <input
-                                className="form-check-input"
-                                type="radio"
-                                name="tiene_demo"
-                                id="demo_si"
-                                value="1"
-                                checked={form.tiene_demo === "1"}
-                                onChange={handleChange}
-                            />
-                            <label className="form-check-label" htmlFor="demo_si">
-                                Sí
-                            </label>
-                        </div>
-                        <div className="form-check">
-                            <input
-                                className="form-check-input"
-                                type="radio"
-                                name="tiene_demo"
-                                id="demo_no"
-                                value="0"
-                                checked={form.tiene_demo === "0"}
-                                onChange={handleChange}
-                            />
-                            <label className="form-check-label" htmlFor="demo_no">
-                                No
-                            </label>
-                        </div>
-                    </div>
                 </div>
             </div>
 
-            <div className="row col-12 divBotonGuardarCambiosJuego">
-                <button type="submit" className="botonGuardarCambiosJuego">
-                    Subir Juego
+            <div className="row col-12 infoSecundariaFormMuestra">
+                <div className="col-6">
+                    <label htmlFor="mainScript">Archivo principal (mainScript):</label>
+                    <input
+                        type="text"
+                        id="mainScript"
+                        name="mainScript"
+                        required
+                        placeholder="main.js"
+                        value={form.mainScript}
+                        onChange={handleChange}
+                        className="form-control"
+                    />
+                </div>
+
+                <div className="col-6">
+                    <label htmlFor="carpeta_demo">Carpeta ZIP del juego:</label>
+                    <input
+                        type="file"
+                        id="carpeta_demo"
+                        name="carpeta_demo"
+                        accept=".zip"
+                        required
+                        onChange={handleZipChange}
+                        className="form-control"
+                    />
+                </div>
+            </div>
+
+            <div className="row col-12 divBotonGuardarCambiosMuestra">
+                <button type="submit" className="botonGuardarCambiosMuestra">
+                    Subir Muestra
                 </button>
             </div>
         </form>
     );
 }
 
-export default FormCrearJuego;
+export default FormCrearMuestra;

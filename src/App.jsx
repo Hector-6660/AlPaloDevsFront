@@ -31,6 +31,9 @@ import DFranquiciasE from './paginas/DFranquiciasE/DFranquiciasE'
 import DPersonajes from './paginas/DPersonajes/DPersonajes'
 import DPersonajesC from './paginas/DPersonajesC/DPersonajesC'
 import DPersonajesE from './paginas/DPersonajesE/DPersonajesE'
+import DMuestras from './paginas/DMuestras/DMuestras';
+import DMuestrasC from './paginas/DMuestrasC/DMuestrasC';
+import DMuestrasE from './paginas/DMuestrasE/DMuestrasE';
 import './App.css'
 
 function App() {
@@ -66,9 +69,9 @@ function App() {
         <Route path="/dashboard/juegos/:id" element={<ProtectedRoute role="admin"><DJuegosE></DJuegosE></ProtectedRoute>} />
         <Route path="/dashboard/juegos/nuevo" element={<ProtectedRoute role="admin"><DJuegosC></DJuegosC></ProtectedRoute>} />
 
-        <Route path="/dashboard/muestras" element={<ProtectedRoute role="admin"><Inicio></Inicio></ProtectedRoute>} />
-        <Route path="/dashboard/muestras/:id" element={<ProtectedRoute role="admin"><Inicio></Inicio></ProtectedRoute>} />
-        <Route path="/dashboard/muestras/nuevo" element={<ProtectedRoute role="admin"><Inicio></Inicio></ProtectedRoute>} />
+        <Route path="/dashboard/muestras" element={<ProtectedRoute role="admin"><DMuestras></DMuestras></ProtectedRoute>} />
+        <Route path="/dashboard/muestras/:id" element={<ProtectedRoute role="admin"><DMuestrasE></DMuestrasE></ProtectedRoute>} />
+        <Route path="/dashboard/muestras/nuevo" element={<ProtectedRoute role="admin"><DMuestrasC></DMuestrasC></ProtectedRoute>} />
 
         <Route path="/dashboard/franquicias" element={<ProtectedRoute role="admin"><DFranquicias></DFranquicias></ProtectedRoute>} />
         <Route path="/dashboard/franquicias/:id" element={<ProtectedRoute role="admin"><DFranquiciasE></DFranquiciasE></ProtectedRoute>} />

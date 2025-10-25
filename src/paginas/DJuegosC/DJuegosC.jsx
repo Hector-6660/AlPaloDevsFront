@@ -1,7 +1,7 @@
 import React from "react";
 import FormCrearJuego from "../../componentes/FormCrearJuego/FormCrearJuego";
 
-function DJuegosE() {
+function DJuegosC() {
     return (
         <div className="row">
             <div className="col-12 text-center">
@@ -14,4 +14,4 @@ function DJuegosE() {
     );
 }
 
-export default DJuegosE;
+export default DJuegosC;
