@@ -13,9 +13,9 @@ export async function crearPersonaje(formData) {
   });
 
   if (!res.ok) {
-    const text = await res.text();
+    const text = await res.json();
     console.error("Error al crear personaje:", text);
-    throw new Error("Error al crear el personaje");
+    throw new Error(text.message);
   }
 
   return await res.json();
@@ -35,9 +35,9 @@ export async function actualizarPersonaje(id, formData) {
   });
 
   if (!res.ok) {
-    const text = await res.text();
+    const text = await res.json();
     console.error("Error al actualizar personaje:", text);
-    throw new Error("Error al actualizar el personaje");
+    throw new Error(text.message);
   }
 
   return await res.json();
@@ -58,7 +58,7 @@ export async function borrarPersonaje(id) {
 
   if (!res.ok) {
     console.error("Error al eliminar personaje:", data);
-    throw new Error(data.message || "Error al eliminar el personaje");
+    throw new Error(data.message);
   }
 
   return data;

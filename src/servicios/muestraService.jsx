@@ -13,9 +13,9 @@ export async function crearDemo(formData) {
   });
 
   if (!res.ok) {
-    const text = await res.text();
+    const text = await res.json();
     console.error("Error al crear demo:", text);
-    throw new Error("Error al crear la demo");
+    throw new Error(text.message);
   }
 
   return await res.json();
@@ -35,9 +35,9 @@ export async function actualizarDemo(id, formData) {
   });
 
   if (!res.ok) {
-    const text = await res.text();
+    const text = await res.json();
     console.error("Error al actualizar demo:", text);
-    throw new Error("Error al actualizar la demo");
+    throw new Error(text.message);
   }
 
   return await res.json();
@@ -58,7 +58,7 @@ export async function borrarDemo(id) {
 
   if (!res.ok) {
     console.error("Error al eliminar demo:", data);
-    throw new Error(data.message || "Error al eliminar la demo");
+    throw new Error(data.message);
   }
 
   return data;

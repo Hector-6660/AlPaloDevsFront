@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import useOneJuego from "../../hooks/useOneJuego";
 import { actualizarJuego } from "../../servicios/juegoService";
+import { useNavigate } from "react-router-dom";
 import './FormEditarJuego.css';
 
 function FormEditarJuego(props) {
     const idJuego = useOneJuego(props.idJuegoPantalla);
+    const navigate = useNavigate();
     const [form, setForm] = useState({
         nombre: "",
         descripcion: "",
@@ -70,9 +72,10 @@ function FormEditarJuego(props) {
 
             await actualizarJuego(props.idJuegoPantalla, formData);
             alert("Juego actualizado con éxito");
+            navigate("/dashboard/juegos");
         } catch (error) {
             console.error(error);
-            alert("Error al actualizar el juego");
+            alert("Error al actualizar el juego: " + error.message);
         }
     };
 

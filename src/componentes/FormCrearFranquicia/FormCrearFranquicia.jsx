@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { crearFranquicia } from "../../servicios/franquiciaService";
+import { useNavigate } from "react-router-dom";
 import "./FormCrearFranquicia.css";
 
 function FormCrearFranquicia() {
+    const navigate = useNavigate();
+
     const [form, setForm] = useState({
         nombre: "",
         descripcion: "",
@@ -52,9 +55,10 @@ function FormCrearFranquicia() {
             setImagenFile(null);
             setLogoPreview("");
             setImagenPreview("");
+            navigate("/dashboard/franquicias");
         } catch (error) {
             console.error(error);
-            alert("Error al crear la franquicia");
+            alert("Error al crear la franquicia: " + error.message);
         }
     };
 

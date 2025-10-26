@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { crearDemo } from "../../servicios/muestraService";
+import { useNavigate } from "react-router-dom";
 import "./FormCrearMuestra.css";
 
 function FormCrearMuestra() {
+    const navigate = useNavigate();
+
     const [form, setForm] = useState({
         nombre: "",
         mainScript: "",
@@ -61,9 +64,10 @@ function FormCrearMuestra() {
             setFotoPreview("");
             setFotoFile(null);
             setZipFile(null);
+            navigate("/dashboard/muestras");
         } catch (error) {
             console.error(error);
-            alert("Error al crear la demo");
+            alert("Error al crear la demo: " + error.message);
         }
     };
 

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import useOneFranquicia from "../../hooks/useOneFranquicia";
 import { actualizarFranquicia } from "../../servicios/franquiciaService";
+import { useNavigate } from "react-router-dom";
 
 function FormEditarFranquicia({ idFranquiciaPantalla }) {
     const idFranquicia = useOneFranquicia(idFranquiciaPantalla);
+    const navigate = useNavigate();
 
     const [form, setForm] = useState({
         nombre: "",
@@ -65,9 +67,10 @@ function FormEditarFranquicia({ idFranquiciaPantalla }) {
 
             await actualizarFranquicia(idFranquiciaPantalla, formData);
             alert("Franquicia actualizada con éxito");
+            navigate("/dashboard/franquicias");
         } catch (error) {
             console.error(error);
-            alert("Error al actualizar la franquicia");
+            alert("Error al actualizar la franquicia: " + error.message);
         }
     };
 

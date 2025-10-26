@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { crearJuego } from "../../servicios/juegoService";
+import { useNavigate } from "react-router-dom";
 
 function FormCrearJuego() {
+    const navigate = useNavigate();
+
     const [form, setForm] = useState({
         nombre: "",
         descripcion: "",
@@ -60,9 +63,10 @@ function FormCrearJuego() {
             });
             setFotoPreview("");
             setFotoFile(null);
+            navigate("/dashboard/juegos");
         } catch (error) {
             console.error(error);
-            alert("Error al crear el juego");
+            alert("Error al crear el juego: " + error.message);
         }
     };
 

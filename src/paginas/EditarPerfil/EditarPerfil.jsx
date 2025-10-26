@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useAuth } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 import AjaxLoader from "../../componentes/AjaxLoader/AjaxLoader";
 import "./EditarPerfil.css";
 
@@ -11,6 +12,7 @@ function EditarPerfil() {
     });
     const [fotoPreview, setFotoPreview] = useState(user?.foto_perfil || "");
     const [fotoFile, setFotoFile] = useState(null);
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         setForm({
@@ -54,6 +56,7 @@ function EditarPerfil() {
             if (response.ok) {
                 alert("Perfil actualizado correctamente");
                 console.log("Usuario actualizado:", data.usuario);
+                navigate("/perfil");
             } else {
                 alert(data.message || "Error al actualizar");
             }

@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import useOnePersonaje from "../../hooks/useOnePersonaje";
 import { actualizarPersonaje } from "../../servicios/personajeService";
+import { useNavigate } from "react-router-dom";
 import './FormEditarPersonaje.css';
 
 function FormEditarPersonaje(props) {
     const idPersonaje = useOnePersonaje(props.idPersonajePantalla);
+    const navigate = useNavigate();
+
     const [form, setForm] = useState({
         nombre: "",
         descripcion: "",
@@ -55,9 +58,10 @@ function FormEditarPersonaje(props) {
 
             await actualizarPersonaje(props.idPersonajePantalla, formData);
             alert("Personaje actualizado con éxito");
+            navigate('/dashboard/personajes');
         } catch (error) {
             console.error(error);
-            alert("Error al actualizar el personaje");
+            alert("Error al actualizar el personaje: " + error.message);
         }
     };
 

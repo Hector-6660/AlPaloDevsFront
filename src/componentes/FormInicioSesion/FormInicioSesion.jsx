@@ -37,11 +37,11 @@ function FormInicioSesion() {
         <form className="formInicioSesion" onSubmit={handleSubmit}>
             <div className="col-12 campo">
                 <label htmlFor="email" className="form-label">Correo electrónico</label>
-                <input type="email" className="form-control" id="email" name="email" value={form.email} onChange={handleChange} />
+                <input type="email" className="form-control" id="email" name="email" required value={form.email} onChange={handleChange} />
             </div>
             <div className="col-12 campo">
                 <label htmlFor="password" className="form-label">Contraseña</label>
-                <input type="password" className="form-control" id="password" name="password" value={form.password} onChange={handleChange} />
+                <input type="password" className="form-control" id="password" name="password" required value={form.password} onChange={handleChange} />
             </div>
             <button type="submit" className="botonInicioSesion">Iniciar sesión</button>
             <div className="col-12">

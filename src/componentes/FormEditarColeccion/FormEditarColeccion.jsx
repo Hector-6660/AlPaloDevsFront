@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import useOneColeccion from "../../hooks/useOneColeccion";
 import { actualizarColeccion } from "../../servicios/coleccionService";
+import { useNavigate } from "react-router-dom";
 import AjaxLoader from "../AjaxLoader/AjaxLoader";
 import './FormEditarColeccion.css';
 
 function FormEditarColeccion(props) {
     const coleccionId = useOneColeccion(props.idColeccion);
+    const navigate = useNavigate();
     const [form, setForm] = useState({
         nombre: "",
         descripcion: "",
@@ -45,6 +47,7 @@ function FormEditarColeccion(props) {
             const resp = await actualizarColeccion(props.idColeccion, data);
             alert("Colección actualizada con éxito");
             console.log("Colección actualizada:", resp);
+            navigate("/coleccion/" + props.idColeccion);
 
         } catch (err) {
             console.error(err);

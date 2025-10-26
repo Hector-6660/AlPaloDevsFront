@@ -44,19 +44,19 @@ function FormRegistro() {
         <form className="formRegistro" onSubmit={handleSubmit}>
             <div className="col-12 campo">
                 <label htmlFor="nombre" className="form-label">Nombre</label>
-                <input type="text" className="form-control" id="nombre" value={form.nombre} name="nombre" onChange={handleChange}/>
+                <input type="text" className="form-control" id="nombre" required value={form.nombre} name="nombre" onChange={handleChange}/>
             </div>
             <div className="col-12 campo">
                 <label htmlFor="nick" className="form-label">Nick</label>
-                <input type="text" className="form-control" id="nick" value={form.nick} name="nick" onChange={handleChange}/>
+                <input type="text" className="form-control" id="nick" required value={form.nick} name="nick" onChange={handleChange}/>
             </div>
             <div className="col-12 campo">
                 <label htmlFor="email" className="form-label">Correo electrónico</label>
-                <input type="email" className="form-control" id="email" value={form.email} name="email" onChange={handleChange}/>
+                <input type="email" className="form-control" id="email" required value={form.email} name="email" onChange={handleChange}/>
             </div>
             <div className="col-12 campo">
                 <label htmlFor="password" className="form-label">Contraseña</label>
-                <input type="password" className="form-control" id="password" value={form.password} name="password" onChange={handleChange}/>
+                <input type="password" className="form-control" id="password" required value={form.password} name="password" onChange={handleChange}/>
             </div>
             <button type="submit" className="botonRegistro">Registrarse</button>
             <div className="col-12 fin">

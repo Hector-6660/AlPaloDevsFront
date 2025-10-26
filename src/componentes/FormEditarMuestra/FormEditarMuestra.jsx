@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import useOneMuestra from "../../hooks/useOneMuestra";
 import { actualizarDemo } from "../../servicios/muestraService";
+import { useNavigate } from "react-router-dom";
 import "./FormEditarMuestra.css";
 
 function FormEditarMuestra({ idMuestraPantalla }) {
     const idMuestra = useOneMuestra(idMuestraPantalla);
+    const navigate = useNavigate();
 
     const [form, setForm] = useState({
         nombre: "",
@@ -72,9 +74,10 @@ function FormEditarMuestra({ idMuestraPantalla }) {
 
             alert("Demo actualizada con éxito");
             console.log("Respuesta servidor:", res);
+            navigate("/dashboard/muestras");
         } catch (error) {
             console.error(error);
-            alert("Error al actualizar la demo");
+            alert("Error al actualizar la demo: " + error.message);
         }
     };
 

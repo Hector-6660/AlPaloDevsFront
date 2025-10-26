@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { crearPersonaje } from "../../servicios/personajeService";
+import { useNavigate } from "react-router-dom";
 
 function FormCrearPersonaje() {
+    const navigate = useNavigate();
+
     const [form, setForm] = useState({
         nombre: "",
         descripcion: "",
@@ -45,9 +48,10 @@ function FormCrearPersonaje() {
             setForm({ nombre: "", descripcion: "", franquicia_id: "" });
             setFotoPreview("");
             setFotoFile(null);
+            navigate('/dashboard/personajes');
         } catch (error) {
             console.error(error);
-            alert("Error al crear el personaje");
+            alert("Error al crear el personaje: " + error.message);
         }
     };
 

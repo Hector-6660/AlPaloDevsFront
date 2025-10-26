@@ -13,9 +13,9 @@ export async function crearFranquicia(formData) {
   });
 
   if (!res.ok) {
-    const text = await res.text();
+    const text = await res.json();
     console.error("Error al crear franquicia:", text);
-    throw new Error("Error al crear la franquicia");
+    throw new Error(text.message);
   }
 
   return await res.json();
@@ -35,9 +35,9 @@ export async function actualizarFranquicia(id, formData) {
   });
 
   if (!res.ok) {
-    const text = await res.text();
+    const text = await res.json();
     console.error("Error al actualizar franquicia:", text);
-    throw new Error("Error al actualizar la franquicia");
+    throw new Error(text.message);
   }
 
   return await res.json();
@@ -58,7 +58,7 @@ export async function borrarFranquicia(id) {
 
   if (!res.ok) {
     console.error("Error al eliminar franquicia:", data);
-    throw new Error(data.message || "Error al eliminar la franquicia");
+    throw new Error(data.message);
   }
 
   return data;
