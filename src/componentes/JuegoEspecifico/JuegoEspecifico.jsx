@@ -63,7 +63,7 @@ function JuegoEspecifico(props) {
                     </div>
                 </div>
                 <div className="col-12">
-                    <h2 className="opinionesJuegoEspecifico">Opiniones de los Usuarios</h2>
+                    <h2 className="opinionesJuegoEspecifico">Opiniones</h2>
                     <FormOpinion juegoId={idJuego.juego.id}></FormOpinion>
                     <ListaOpiniones idJuego={idJuego.juego.id}></ListaOpiniones>
                 </div>

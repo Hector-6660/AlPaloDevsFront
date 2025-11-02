@@ -12,6 +12,7 @@
     flex-direction: row;
 
     img {
+        padding: 15px;
         width: 100%;
     }
 

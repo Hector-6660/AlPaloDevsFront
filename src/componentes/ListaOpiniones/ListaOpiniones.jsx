@@ -10,7 +10,7 @@ function ListaOpiniones(props) {
     if (!listaOpiniones || !Array.isArray(listaOpiniones.lista)) {
         return (
             <>
-                <h2>Opiniones de los Usuarios</h2>
+                <h3>Opiniones de los Usuarios</h3>
                 <p>No hay opiniones todavía.</p>
             </>
         );
@@ -24,7 +24,7 @@ function ListaOpiniones(props) {
 
     return (
         <div className="col-12">
-            <h2>Opiniones de los Usuarios</h2>
+            <h3>Opiniones de los Usuarios</h3>
             {listaOpiniones.buscando ? (
                 <AjaxLoader />
             ) : (
