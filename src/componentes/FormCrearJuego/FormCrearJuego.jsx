@@ -63,7 +63,7 @@ function FormCrearJuego() {
             });
             setFotoPreview("");
             setFotoFile(null);
-            navigate("/dashboard/juegos");
+            navigate("/AlPaloDevsFront/dashboard/juegos");
         } catch (error) {
             console.error(error);
             alert("Error al crear el juego: " + error.message);

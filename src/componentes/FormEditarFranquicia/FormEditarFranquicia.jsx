@@ -67,7 +67,7 @@ function FormEditarFranquicia({ idFranquiciaPantalla }) {
 
             await actualizarFranquicia(idFranquiciaPantalla, formData);
             alert("Franquicia actualizada con éxito");
-            navigate("/dashboard/franquicias");
+            navigate("/AlPaloDevsFront/dashboard/franquicias");
         } catch (error) {
             console.error(error);
             alert("Error al actualizar la franquicia: " + error.message);

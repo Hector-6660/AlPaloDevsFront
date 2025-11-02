@@ -72,7 +72,7 @@ function FormEditarJuego(props) {
 
             await actualizarJuego(props.idJuegoPantalla, formData);
             alert("Juego actualizado con éxito");
-            navigate("/dashboard/juegos");
+            navigate("/AlPaloDevsFront/dashboard/juegos");
         } catch (error) {
             console.error(error);
             alert("Error al actualizar el juego: " + error.message);

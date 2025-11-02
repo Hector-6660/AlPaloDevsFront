@@ -31,7 +31,7 @@ function CrearColeccion() {
             const response = await crearColeccion(nuevaColeccion);
             alert("Colección creada con éxito");
             console.log("Colección creada:", response);
-            navigate("/perfil");
+            navigate("/AlPaloDevsFront/perfil");
 
             setForm({ nombre: "", descripcion: "" });
 

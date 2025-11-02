@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { quitarJuegoDeColeccion } from "../../servicios/coleccionService";
 import useOneColeccion from "../../hooks/useOneColeccion";
 import AjaxLoader from "../AjaxLoader/AjaxLoader";
+
+import eliminarBlanco from '/src/assets/Iconos/eliminarBlanco.svg';
 import './ColeccionEspecifica.css';
 
 function ColeccionEspecifica(props) {
@@ -44,7 +46,7 @@ function ColeccionEspecifica(props) {
                                 e.preventDefault(); // evita que se dispare el Link
                                 handleEliminar(juego.id);
                             }}>
-                                <img src="/AlPaloDevsFront/src/assets/Iconos/eliminarBlanco.svg" alt="eliminar" />
+                                <img src={eliminarBlanco} alt="eliminar" />
                             </button>
                         </div>
                     </div>

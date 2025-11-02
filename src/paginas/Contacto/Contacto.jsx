@@ -1,6 +1,9 @@
 import React from "react";
 import "./Contacto.css";
 
+import correo from "/src/assets/Redes/correo.png";
+import twitterx from "/src/assets/Redes/twitterx.png";
+
 function Contacto() {
     return (
         <>
@@ -13,7 +16,7 @@ function Contacto() {
             <div className="row">
                 <div className="contactoItem">
                     <div className="col-2">
-                        <img src="/AlPaloDevsFront/src/assets/Redes/correo.png" alt="Email" />
+                        <img src={correo} alt="Email" />
                     </div>
                     <div className="col-10 descripcionContacto">
                         <h3>Correo electrónico</h3>
@@ -24,7 +27,7 @@ function Contacto() {
 
                 <div className="contactoItem">
                     <div className="col-2">
-                        <img src="/AlPaloDevsFront/src/assets/Redes/twitterx.png" alt="Twitter" />
+                        <img src={twitterx} alt="Twitter" />
                     </div>
                     <div className="col-10 descripcionContacto">
                         <h3>Twitter</h3>

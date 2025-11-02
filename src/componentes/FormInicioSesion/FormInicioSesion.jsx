@@ -26,7 +26,7 @@ function FormInicioSesion() {
         try {
             const usuario = await loginService(form); // devuelve el usuario directamente
             login(usuario); // actualiza el contexto
-            navigate("/"); // redirige al inicio
+            navigate("/AlPaloDevsFront/"); // redirige al inicio
         } catch (error) {
             console.error("Error al iniciar sesión:", error);
             alert(error.message || "Error al iniciar sesión");

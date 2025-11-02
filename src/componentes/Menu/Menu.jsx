@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import "./Menu.css";
 
+import logoFondoNegro from "/src/assets/Logo/logoFondoNegro.png";
+
 function Menu() {
     const { user } = useAuth();
 
@@ -11,7 +13,7 @@ function Menu() {
             <nav className="navbar navbar-expand-lg bg-body-tertiary navbarMenu">
                 <div className="container-fluid menu">
                     <Link className="enlaceLogo" to="/AlPaloDevsFront/">
-                        <img src="/AlPaloDevsFront/src/assets/Logo/logoFondoNegro.png" className="logoMenu"></img>
+                        <img src={logoFondoNegro} className="logoMenu"></img>
                     </Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup">
                         <span className="navbar-toggler-icon"></span>

@@ -41,13 +41,13 @@ export function AuthProvider({ children }) {
     const login = (userData) => {
         setUser(userData);
         localStorage.setItem("user", JSON.stringify(userData));
-        navigate("/");
+        navigate("/AlPaloDevsFront/");
     };
 
     const logout = () => {
         setUser(null);
         localStorage.removeItem("user");
-        navigate("/");
+        navigate("/AlPaloDevsFront/");
     };
 
     return (

@@ -47,7 +47,7 @@ function FormEditarColeccion(props) {
             const resp = await actualizarColeccion(props.idColeccion, data);
             alert("Colección actualizada con éxito");
             console.log("Colección actualizada:", resp);
-            navigate("/coleccion/" + props.idColeccion);
+            navigate("/AlPaloDevsFront/coleccion/" + props.idColeccion);
 
         } catch (err) {
             console.error(err);

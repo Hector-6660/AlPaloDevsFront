@@ -6,6 +6,9 @@ import { borrarFranquicia } from "../../servicios/franquiciaService";
 import Paginacion from "../Paginacion/Paginacion";
 import AjaxLoader from "../AjaxLoader/AjaxLoader";
 
+import editarNegro from "/src/assets/Iconos/editarNegro.svg";
+import eliminarNegro from "/src/assets/Iconos/eliminarNegro.svg";
+
 function DListaFranquicias() {
     const listafranquicias = useAllFranquicias();
     const [hover, setHover] = useState({ id: null, tipo: null });
@@ -48,7 +51,7 @@ function DListaFranquicias() {
                 </div>
                 <div className="col-1 accionesDashboard">
                     <Link to={`/AlPaloDevsFront/dashboard/franquicias/${franquicia.id}`}>
-                        <img src="/AlPaloDevsFront/src/assets/Iconos/editarNegro.svg"
+                        <img src={editarNegro}
                             onMouseEnter={() => setHover({ id: franquicia.id, tipo: "editar" })}
                             onMouseLeave={() => setHover({ id: null, tipo: null })}
                         ></img>
@@ -56,7 +59,7 @@ function DListaFranquicias() {
                 </div>
                 <div className="col-1 accionesDashboard">
                     <button onClick={() => handleEliminar(franquicia.id)}>
-                        <img src="/AlPaloDevsFront/src/assets/Iconos/eliminarNegro.svg"
+                        <img src={eliminarNegro}
                             onMouseEnter={() => setHover({ id: franquicia.id, tipo: "eliminar" })}
                             onMouseLeave={() => setHover({ id: null, tipo: null })}
                         ></img>

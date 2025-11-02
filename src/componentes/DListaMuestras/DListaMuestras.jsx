@@ -4,6 +4,9 @@ import useAllDemos from "../../hooks/useAllDemos";
 import { borrarDemo } from "../../servicios/muestraService";
 import AjaxLoader from "../AjaxLoader/AjaxLoader";
 
+import editarNegro from "/src/assets/Iconos/editarNegro.svg";
+import eliminarNegro from "/src/assets/Iconos/eliminarNegro.svg";
+
 function DListaMuestras() {
     const listamuestras = useAllDemos();
     const [hover, setHover] = useState({ id: null, tipo: null });
@@ -44,7 +47,7 @@ function DListaMuestras() {
                 </div>
                 <div className="col-1 accionesDashboard">
                     <Link to={`/AlPaloDevsFront/dashboard/muestras/${muestra.id}`}>
-                        <img src="/AlPaloDevsFront/src/assets/Iconos/editarNegro.svg"
+                        <img src={editarNegro}
                             onMouseEnter={() => setHover({ id: muestra.id, tipo: "editar" })}
                             onMouseLeave={() => setHover({ id: null, tipo: null })}
                         ></img>
@@ -52,7 +55,7 @@ function DListaMuestras() {
                 </div>
                 <div className="col-1 accionesDashboard">
                     <button onClick={() => handleEliminar(muestra.id)}>
-                        <img src="/AlPaloDevsFront/src/assets/Iconos/eliminarNegro.svg"
+                        <img src={eliminarNegro}
                             onMouseEnter={() => setHover({ id: muestra.id, tipo: "eliminar" })}
                             onMouseLeave={() => setHover({ id: null, tipo: null })}
                         ></img>

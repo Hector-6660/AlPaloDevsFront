@@ -33,7 +33,7 @@ function FormRegistro() {
         try {
             const data = await register(form);
             login(data.usuario);
-            navigate("/");
+            navigate("/AlPaloDevsFront/");
         } catch (error) {
             console.error(error);
             alert("Error al registrar usuario");

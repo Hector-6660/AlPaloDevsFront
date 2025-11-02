@@ -2,17 +2,21 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./PieDePagina.css";
 
+import twitterx from "/src/assets/Redes/twitterx.png";
+import googlePlay from "/src/assets/Redes/googlePlay.png";
+import logoMenu from "/src/assets/Logo/logoFondoNegro.png";
+
 function PieDePagina() {
     return (
         <footer className="row pie">
             <div className="col-12 redes">
-                <a href="https://x.com/alpalodevs"><img src="/AlPaloDevsFront/src/assets/Redes/twitterx.png" className="twitterx"></img></a>
-                <a href="https://play.google.com/store/apps/dev?id=8904098810930432419"><img src="/AlPaloDevsFront/src/assets/Redes/googlePlay.png" className="googlePlay"></img></a>
+                <a href="https://x.com/alpalodevs"><img src={twitterx} className="twitterx"></img></a>
+                <a href="https://play.google.com/store/apps/dev?id=8904098810930432419"><img src={googlePlay} className="googlePlay"></img></a>
             </div>
             <div className="col-12 cuerpoPie">
                 <div className="row">
                 <div className="col-6 logoPie">
-                    <img src="/AlPaloDevsFront/src/assets/Logo/logoFondoNegro.png" className="logoMenu"></img>
+                    <img src={logoMenu} className="logoMenu"></img>
                 </div>
                 <div className="col-6 botonContactoArea">
                     <Link to="/AlPaloDevsFront/contacto" className="botonContacto">Contáctanos</Link>

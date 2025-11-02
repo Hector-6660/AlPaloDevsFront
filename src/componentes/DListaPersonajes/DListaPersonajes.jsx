@@ -6,6 +6,9 @@ import { borrarPersonaje } from "../../servicios/personajeService";
 import Paginacion from "../Paginacion/Paginacion";
 import AjaxLoader from "../AjaxLoader/AjaxLoader";
 
+import editarNegro from "/src/assets/Iconos/editarNegro.svg";
+import eliminarNegro from "/src/assets/Iconos/eliminarNegro.svg";
+
 function DListaPersonajes() {
     const listapersonajes = useAllPersonajes();
     const [hover, setHover] = useState({ id: null, tipo: null });
@@ -48,7 +51,7 @@ function DListaPersonajes() {
                 </div>
                 <div className="col-1 accionesDashboard">
                     <Link to={`/AlPaloDevsFront/dashboard/personajes/${personaje.id}`}>
-                        <img src="/AlPaloDevsFront/src/assets/Iconos/editarNegro.svg"
+                        <img src={editarNegro}
                             onMouseEnter={() => setHover({ id: personaje.id, tipo: "editar" })}
                             onMouseLeave={() => setHover({ id: null, tipo: null })}
                         ></img>
@@ -56,7 +59,7 @@ function DListaPersonajes() {
                 </div>
                 <div className="col-1 accionesDashboard">
                     <button onClick={() => handleEliminar(personaje.id)}>
-                        <img src="/AlPaloDevsFront/src/assets/Iconos/eliminarNegro.svg"
+                        <img src={eliminarNegro}
                             onMouseEnter={() => setHover({ id: personaje.id, tipo: "eliminar" })}
                             onMouseLeave={() => setHover({ id: null, tipo: null })}
                         ></img>

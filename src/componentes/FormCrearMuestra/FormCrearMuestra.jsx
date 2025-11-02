@@ -64,7 +64,7 @@ function FormCrearMuestra() {
             setFotoPreview("");
             setFotoFile(null);
             setZipFile(null);
-            navigate("/dashboard/muestras");
+            navigate("/AlPaloDevsFront/dashboard/muestras");
         } catch (error) {
             console.error(error);
             alert("Error al crear la demo: " + error.message);

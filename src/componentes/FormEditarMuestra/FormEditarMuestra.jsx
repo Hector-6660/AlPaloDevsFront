@@ -74,7 +74,7 @@ function FormEditarMuestra({ idMuestraPantalla }) {
 
             alert("Demo actualizada con éxito");
             console.log("Respuesta servidor:", res);
-            navigate("/dashboard/muestras");
+            navigate("/AlPaloDevsFront/dashboard/muestras");
         } catch (error) {
             console.error(error);
             alert("Error al actualizar la demo: " + error.message);

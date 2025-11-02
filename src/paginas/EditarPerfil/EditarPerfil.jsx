@@ -56,7 +56,7 @@ function EditarPerfil() {
             if (response.ok) {
                 alert("Perfil actualizado correctamente");
                 console.log("Usuario actualizado:", data.usuario);
-                navigate("/perfil");
+                navigate("/AlPaloDevsFront/perfil");
             } else {
                 alert(data.message || "Error al actualizar");
             }

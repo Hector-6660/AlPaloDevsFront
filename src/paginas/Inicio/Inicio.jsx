@@ -3,12 +3,15 @@ import { Link } from "react-router-dom";
 import NovedadesInicio from "../../componentes/NovedadesInicio/NovedadesInicio";
 import "./Inicio.css";
 
+import BannerInicio from "/src/assets/Inicio/BannerInicio.jpg";
+import NosotrosInicio from "/src/assets/Inicio/NosotrosInicio.jpg";
+
 function Inicio() {
   return (
       <>
         <div className="row ">
           <div className="col-12">
-            <img src="/AlPaloDevsFront/src/assets/Inicio/BannerInicio.jpg" className="img-fluid"></img>
+            <img src={BannerInicio} className="img-fluid"></img>
           </div>
           <div className="col-12 divInicio">
             <p>Todo gran juego comienza con una idea. Nosotros la hacemos jugar.</p>
@@ -22,7 +25,7 @@ function Inicio() {
         </div>
         <div className="row">
             <div className="col-6 divImagenNosotrosInicio">
-              <img src="/AlPaloDevsFront/src/assets/Inicio/NosotrosInicio.jpg" alt="Nosotros" className="imagenNosotrosInicio" />
+              <img src={NosotrosInicio} alt="Nosotros" className="imagenNosotrosInicio" />
             </div>
             <div className="col-6 NosotrosInicio">
               <div className="divTextoNosotrosInicio">

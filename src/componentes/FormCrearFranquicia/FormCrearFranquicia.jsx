@@ -55,7 +55,7 @@ function FormCrearFranquicia() {
             setImagenFile(null);
             setLogoPreview("");
             setImagenPreview("");
-            navigate("/dashboard/franquicias");
+            navigate("/AlPaloDevsFront/dashboard/franquicias");
         } catch (error) {
             console.error(error);
             alert("Error al crear la franquicia: " + error.message);
