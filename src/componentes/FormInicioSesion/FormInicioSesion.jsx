@@ -45,7 +45,7 @@ function FormInicioSesion() {
             </div>
             <button type="submit" className="botonInicioSesion">Iniciar sesión</button>
             <div className="col-12">
-                <p>¿No tienes una cuenta? <Link to="/registro">Regístrate aquí</Link></p>
+                <p>¿No tienes una cuenta? <Link to="/AlPaloDevsFront/registro">Regístrate aquí</Link></p>
             </div>
             <div className="col-12 fin">
                 <p><a href="/recuperar-contrasena">¿Olvidaste tu contraseña?</a></p>

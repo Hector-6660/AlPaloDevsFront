@@ -33,7 +33,7 @@ function JuegoEspecifico(props) {
                             </div>
                             <div className="botonJuegoEspecificoDemo">
                                 {tieneDemoFlag === true ? (
-                                    <Link to={`/muestra/${demoId}`} className="botonADemo">
+                                    <Link to={`/AlPaloDevsFront/muestra/${demoId}`} className="botonADemo">
                                     Jugar Demo
                                     </Link>
                                 ) : (

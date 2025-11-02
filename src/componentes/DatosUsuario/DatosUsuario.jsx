@@ -37,7 +37,7 @@ function DatosUsuario() {
                     <h1>{usuario.nick}</h1>
                     <h3>{usuario.nombre}</h3>
                     <p>Email: {usuario.email}</p>
-                    <Link to="/editar-perfil" className="editarPerfil">Editar perfil</Link>
+                    <Link to="/AlPaloDevsFront/editar-perfil" className="editarPerfil">Editar perfil</Link>
                     <button onClick={logout} className="cerrarSesion">Cerrar sesión</button>
                     <button onClick={handleDelete} className="borrarPerfil">Borrar cuenta</button>
                 </div>

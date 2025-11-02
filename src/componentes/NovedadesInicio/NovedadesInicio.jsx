@@ -22,7 +22,7 @@ function NovedadesInicio() {
                 </div>
             </div>
             <div className="col-6 col-sm-4 divImagenNovedadesInicio">
-                <Link to={`/juego/${juego.id}`}>
+                <Link to={`/AlPaloDevsFront/juego/${juego.id}`}>
                     <img src={juego.imagen} alt={juego.nombre} className="imagenNovedadesInicio" />
                 </Link>
             </div>

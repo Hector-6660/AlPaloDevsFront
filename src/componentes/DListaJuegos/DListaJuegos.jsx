@@ -47,8 +47,8 @@ function DListaJuegos() {
                     <p>{juego.nombre}</p>
                 </div>
                 <div className="col-1 accionesDashboard">
-                    <Link to={`/dashboard/juegos/${juego.id}`}>
-                        <img src="/src/assets/Iconos/editarNegro.svg"
+                    <Link to={`/AlPaloDevsFront/dashboard/juegos/${juego.id}`}>
+                        <img src="/AlPaloDevsFront/src/assets/Iconos/editarNegro.svg"
                             onMouseEnter={() => setHover({ id: juego.id, tipo: "editar" })}
                             onMouseLeave={() => setHover({ id: null, tipo: null })}
                         ></img>
@@ -56,7 +56,7 @@ function DListaJuegos() {
                 </div>
                 <div className="col-1 accionesDashboard">
                     <button onClick={() => handleEliminar(juego.id)}>
-                        <img src="/src/assets/Iconos/eliminarNegro.svg"
+                        <img src="/AlPaloDevsFront/src/assets/Iconos/eliminarNegro.svg"
                             onMouseEnter={() => setHover({ id: juego.id, tipo: "eliminar" })}
                             onMouseLeave={() => setHover({ id: null, tipo: null })}
                         ></img>
@@ -87,7 +87,7 @@ function DListaJuegos() {
                 )}
             </div>
             <div className="row col-12 divCrear">
-                <Link to="/dashboard/juegos/nuevo" className="botonAñadir">
+                <Link to="/AlPaloDevsFront/dashboard/juegos/nuevo" className="botonAñadir">
                     Agregar Juego
                 </Link>
             </div>

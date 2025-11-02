@@ -43,8 +43,8 @@ function DListaMuestras() {
                     <p>{muestra.nombre}</p>
                 </div>
                 <div className="col-1 accionesDashboard">
-                    <Link to={`/dashboard/muestras/${muestra.id}`}>
-                        <img src="/src/assets/Iconos/editarNegro.svg"
+                    <Link to={`/AlPaloDevsFront/dashboard/muestras/${muestra.id}`}>
+                        <img src="/AlPaloDevsFront/src/assets/Iconos/editarNegro.svg"
                             onMouseEnter={() => setHover({ id: muestra.id, tipo: "editar" })}
                             onMouseLeave={() => setHover({ id: null, tipo: null })}
                         ></img>
@@ -52,7 +52,7 @@ function DListaMuestras() {
                 </div>
                 <div className="col-1 accionesDashboard">
                     <button onClick={() => handleEliminar(muestra.id)}>
-                        <img src="/src/assets/Iconos/eliminarNegro.svg"
+                        <img src="/AlPaloDevsFront/src/assets/Iconos/eliminarNegro.svg"
                             onMouseEnter={() => setHover({ id: muestra.id, tipo: "eliminar" })}
                             onMouseLeave={() => setHover({ id: null, tipo: null })}
                         ></img>
@@ -74,7 +74,7 @@ function DListaMuestras() {
                 )}
             </div>
             <div className="row col-12 divCrear">
-                <Link to="/dashboard/muestras/nuevo" className="botonAñadir">
+                <Link to="/AlPaloDevsFront/dashboard/muestras/nuevo" className="botonAñadir">
                     Agregar Muestra
                 </Link>
             </div>

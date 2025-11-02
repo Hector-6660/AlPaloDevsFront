@@ -10,7 +10,7 @@ function JuegosDeFranquicia(props) {
 
     function mostrarNombreDeFranquicia() {
         return (
-            <h2>Franquicia: <Link to={`/franquicia/${props.idFranquicia}`}>{franquicia.franquicia.nombre}</Link></h2>
+            <h2>Franquicia: <Link to={`/AlPaloDevsFront/franquicia/${props.idFranquicia}`}>{franquicia.franquicia.nombre}</Link></h2>
         );
     }
 

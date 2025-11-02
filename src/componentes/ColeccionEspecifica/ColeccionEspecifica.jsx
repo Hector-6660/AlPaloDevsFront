@@ -31,7 +31,7 @@ function ColeccionEspecifica(props) {
 
         return (
             <div key={juego.id} className="col-5 col-sm-3 juegoColeccionEspecificaDiv">
-                <Link to={`/juego/${juego.id}`} className="juegoColeccionEspecifica">
+                <Link to={`/AlPaloDevsFront/juego/${juego.id}`} className="juegoColeccionEspecifica">
                     <div className="col-12">
                         <img src={juego.imagen} alt={juego.nombre} className="imagenJuegoColeccionEspecifica"/>
                     </div>
@@ -44,7 +44,7 @@ function ColeccionEspecifica(props) {
                                 e.preventDefault(); // evita que se dispare el Link
                                 handleEliminar(juego.id);
                             }}>
-                                <img src="/src/assets/Iconos/eliminarBlanco.svg" alt="eliminar" />
+                                <img src="/AlPaloDevsFront/src/assets/Iconos/eliminarBlanco.svg" alt="eliminar" />
                             </button>
                         </div>
                     </div>
@@ -68,7 +68,7 @@ function ColeccionEspecifica(props) {
                             <p>{coleccionId?.coleccion.descripcion}</p>
                         </div>
                         <div className="divEditarColeccionEspecifica">
-                            <Link to={`/editar-coleccion/${coleccionId?.coleccion.id}`}>Editar colección</Link>
+                            <Link to={`/AlPaloDevsFront/editar-coleccion/${coleccionId?.coleccion.id}`}>Editar colección</Link>
                         </div>
                     </div>
                     <div className="col-12 juegosColeccionEspecifica">

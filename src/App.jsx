@@ -48,38 +48,38 @@ function App() {
       )}
 
       <Routes>
-        <Route path="/" element={<Inicio></Inicio>} />
-        <Route path="/juegos" element={<Juegos></Juegos>} />
-        <Route path="/juego/:id" element={<Juego></Juego>} />
-        <Route path="/muestras" element={<Muestras></Muestras>} />
-        <Route path="/muestra/:id" element={<Muestra></Muestra>} />
-        <Route path="/contacto" element={<Contacto></Contacto>} />
-        <Route path="/nosotros" element={<Nosotros></Nosotros>} />
-        <Route path="/perfil" element={<Perfil></Perfil>} />
-        <Route path="/editar-perfil" element={<EditarPerfil></EditarPerfil>} />
-        <Route path="/franquicia/:id" element={<Franquicia></Franquicia>} />
-        <Route path="/coleccion/:id" element={<Coleccion></Coleccion>} />
-        <Route path="/crear-coleccion" element={<CrearColeccion></CrearColeccion>} />
-        <Route path="/editar-coleccion/:id" element={<EditarColeccion></EditarColeccion>} />
-        <Route path="/registro" element={<Registro></Registro>} />
-        <Route path="/inicio-sesion" element={<InicioSesion></InicioSesion>} />
+        <Route path="/AlPaloDevsFront/" element={<Inicio></Inicio>} />
+        <Route path="/AlPaloDevsFront/juegos" element={<Juegos></Juegos>} />
+        <Route path="/AlPaloDevsFront/juego/:id" element={<Juego></Juego>} />
+        <Route path="/AlPaloDevsFront/muestras" element={<Muestras></Muestras>} />
+        <Route path="/AlPaloDevsFront/muestra/:id" element={<Muestra></Muestra>} />
+        <Route path="/AlPaloDevsFront/contacto" element={<Contacto></Contacto>} />
+        <Route path="/AlPaloDevsFront/nosotros" element={<Nosotros></Nosotros>} />
+        <Route path="/AlPaloDevsFront/perfil" element={<Perfil></Perfil>} />
+        <Route path="/AlPaloDevsFront/editar-perfil" element={<EditarPerfil></EditarPerfil>} />
+        <Route path="/AlPaloDevsFront/franquicia/:id" element={<Franquicia></Franquicia>} />
+        <Route path="/AlPaloDevsFront/coleccion/:id" element={<Coleccion></Coleccion>} />
+        <Route path="/AlPaloDevsFront/crear-coleccion" element={<CrearColeccion></CrearColeccion>} />
+        <Route path="/AlPaloDevsFront/editar-coleccion/:id" element={<EditarColeccion></EditarColeccion>} />
+        <Route path="/AlPaloDevsFront/registro" element={<Registro></Registro>} />
+        <Route path="/AlPaloDevsFront/inicio-sesion" element={<InicioSesion></InicioSesion>} />
 
         {/* Rutas de administrador */}
-        <Route path="/dashboard/juegos" element={<ProtectedRoute role="admin"><DJuegos></DJuegos></ProtectedRoute>} />
-        <Route path="/dashboard/juegos/:id" element={<ProtectedRoute role="admin"><DJuegosE></DJuegosE></ProtectedRoute>} />
-        <Route path="/dashboard/juegos/nuevo" element={<ProtectedRoute role="admin"><DJuegosC></DJuegosC></ProtectedRoute>} />
+        <Route path="/AlPaloDevsFront/dashboard/juegos" element={<ProtectedRoute role="admin"><DJuegos></DJuegos></ProtectedRoute>} />
+        <Route path="/AlPaloDevsFront/dashboard/juegos/:id" element={<ProtectedRoute role="admin"><DJuegosE></DJuegosE></ProtectedRoute>} />
+        <Route path="/AlPaloDevsFront/dashboard/juegos/nuevo" element={<ProtectedRoute role="admin"><DJuegosC></DJuegosC></ProtectedRoute>} />
 
-        <Route path="/dashboard/muestras" element={<ProtectedRoute role="admin"><DMuestras></DMuestras></ProtectedRoute>} />
-        <Route path="/dashboard/muestras/:id" element={<ProtectedRoute role="admin"><DMuestrasE></DMuestrasE></ProtectedRoute>} />
-        <Route path="/dashboard/muestras/nuevo" element={<ProtectedRoute role="admin"><DMuestrasC></DMuestrasC></ProtectedRoute>} />
+        <Route path="/AlPaloDevsFront/dashboard/muestras" element={<ProtectedRoute role="admin"><DMuestras></DMuestras></ProtectedRoute>} />
+        <Route path="/AlPaloDevsFront/dashboard/muestras/:id" element={<ProtectedRoute role="admin"><DMuestrasE></DMuestrasE></ProtectedRoute>} />
+        <Route path="/AlPaloDevsFront/dashboard/muestras/nuevo" element={<ProtectedRoute role="admin"><DMuestrasC></DMuestrasC></ProtectedRoute>} />
 
-        <Route path="/dashboard/franquicias" element={<ProtectedRoute role="admin"><DFranquicias></DFranquicias></ProtectedRoute>} />
-        <Route path="/dashboard/franquicias/:id" element={<ProtectedRoute role="admin"><DFranquiciasE></DFranquiciasE></ProtectedRoute>} />
-        <Route path="/dashboard/franquicias/nuevo" element={<ProtectedRoute role="admin"><DFranquiciasC></DFranquiciasC></ProtectedRoute>} />
+        <Route path="/AlPaloDevsFront/dashboard/franquicias" element={<ProtectedRoute role="admin"><DFranquicias></DFranquicias></ProtectedRoute>} />
+        <Route path="/AlPaloDevsFront/dashboard/franquicias/:id" element={<ProtectedRoute role="admin"><DFranquiciasE></DFranquiciasE></ProtectedRoute>} />
+        <Route path="/AlPaloDevsFront/dashboard/franquicias/nuevo" element={<ProtectedRoute role="admin"><DFranquiciasC></DFranquiciasC></ProtectedRoute>} />
 
-        <Route path="/dashboard/personajes" element={<ProtectedRoute role="admin"><DPersonajes></DPersonajes></ProtectedRoute>} />
-        <Route path="/dashboard/personajes/:id" element={<ProtectedRoute role="admin"><DPersonajesE></DPersonajesE></ProtectedRoute>} />
-        <Route path="/dashboard/personajes/nuevo" element={<ProtectedRoute role="admin"><DPersonajesC></DPersonajesC></ProtectedRoute>} />
+        <Route path="/AlPaloDevsFront/dashboard/personajes" element={<ProtectedRoute role="admin"><DPersonajes></DPersonajes></ProtectedRoute>} />
+        <Route path="/AlPaloDevsFront/dashboard/personajes/:id" element={<ProtectedRoute role="admin"><DPersonajesE></DPersonajesE></ProtectedRoute>} />
+        <Route path="/AlPaloDevsFront/dashboard/personajes/nuevo" element={<ProtectedRoute role="admin"><DPersonajesC></DPersonajesC></ProtectedRoute>} />
       </Routes>
 
       <PieDePagina></PieDePagina>

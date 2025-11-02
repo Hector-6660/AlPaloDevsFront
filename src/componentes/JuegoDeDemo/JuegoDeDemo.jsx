@@ -24,12 +24,12 @@ function JuegoDeDemo(props) {
                             
                             <div className="col-12 verJuegoFranquicia">
                                 <div className="col-12 col-sm-6 verJuego">
-                                    <Link to={`/juego/${juegoId.juego.id}`} className="botonVerJuego">
+                                    <Link to={`/AlPaloDevsFront/juego/${juegoId.juego.id}`} className="botonVerJuego">
                                         Ver {juegoId.juego.nombre}
                                     </Link>
                                 </div>
                                 <div className="col-12 col-sm-6 verFranquicia">
-                                    <Link to={`/franquicia/${juegoId.juego.franquicia_id}`} className="botonVerFranquicia">
+                                    <Link to={`/AlPaloDevsFront/franquicia/${juegoId.juego.franquicia_id}`} className="botonVerFranquicia">
                                         <LogoFranquicia idFranquicia={juegoId.juego.franquicia_id}></LogoFranquicia>
                                     </Link>
                                 </div>

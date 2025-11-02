@@ -47,8 +47,8 @@ function DListaFranquicias() {
                     <p>{franquicia.nombre}</p>
                 </div>
                 <div className="col-1 accionesDashboard">
-                    <Link to={`/dashboard/franquicias/${franquicia.id}`}>
-                        <img src="/src/assets/Iconos/editarNegro.svg"
+                    <Link to={`/AlPaloDevsFront/dashboard/franquicias/${franquicia.id}`}>
+                        <img src="/AlPaloDevsFront/src/assets/Iconos/editarNegro.svg"
                             onMouseEnter={() => setHover({ id: franquicia.id, tipo: "editar" })}
                             onMouseLeave={() => setHover({ id: null, tipo: null })}
                         ></img>
@@ -56,7 +56,7 @@ function DListaFranquicias() {
                 </div>
                 <div className="col-1 accionesDashboard">
                     <button onClick={() => handleEliminar(franquicia.id)}>
-                        <img src="/src/assets/Iconos/eliminarNegro.svg"
+                        <img src="/AlPaloDevsFront/src/assets/Iconos/eliminarNegro.svg"
                             onMouseEnter={() => setHover({ id: franquicia.id, tipo: "eliminar" })}
                             onMouseLeave={() => setHover({ id: null, tipo: null })}
                         ></img>
@@ -87,7 +87,7 @@ function DListaFranquicias() {
                 )}
             </div>
             <div className="row col-12 divCrear">
-                <Link to="/dashboard/franquicias/nuevo" className="botonAñadir">
+                <Link to="/AlPaloDevsFront/dashboard/franquicias/nuevo" className="botonAñadir">
                     Agregar Franquicia
                 </Link>
             </div>

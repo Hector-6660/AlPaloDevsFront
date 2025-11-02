@@ -19,7 +19,7 @@ function ColeccionMin(props) {
 
     return (
         <div className="col-12 coleccionMinContainer">
-            <Link to={`/coleccion/${props.coleccion.id}`} className="linkColeccionMin">
+            <Link to={`/AlPaloDevsFront/coleccion/${props.coleccion.id}`} className="linkColeccionMin">
                 <div className="row  coleccionMin">
                     <div className="col-4">
                         <img src={props.coleccion.imagen} alt={props.coleccion.nombre} className="imagenColeccion"/>

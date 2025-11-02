@@ -3,7 +3,7 @@ import React from "react";
 function AjaxLoader() {
     return (
         <>
-            <img src="/src/assets/ajax-loader.gif"></img>
+            <img src="/AlPaloDevsFront/src/assets/ajax-loader.gif"></img>
         </>
     );
 }

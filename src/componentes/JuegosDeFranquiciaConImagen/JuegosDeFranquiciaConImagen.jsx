@@ -15,7 +15,7 @@ function JuegosDeFranquiciaConImagen(props) {
 
         return (
             <div key={juego.id} className="col-6 col-md-4 col-sm-2 juegoFranquicia">
-                <Link to={`/juego/${juego.id}`}>
+                <Link to={`/AlPaloDevsFront/juego/${juego.id}`}>
                     <img src={juego.imagen} alt={juego.nombre} />
                     <h4>{juego.nombre}</h4>
                 </Link>

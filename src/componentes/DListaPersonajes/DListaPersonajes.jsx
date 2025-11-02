@@ -47,8 +47,8 @@ function DListaPersonajes() {
                     <p>{personaje.nombre}</p>
                 </div>
                 <div className="col-1 accionesDashboard">
-                    <Link to={`/dashboard/personajes/${personaje.id}`}>
-                        <img src="/src/assets/Iconos/editarNegro.svg"
+                    <Link to={`/AlPaloDevsFront/dashboard/personajes/${personaje.id}`}>
+                        <img src="/AlPaloDevsFront/src/assets/Iconos/editarNegro.svg"
                             onMouseEnter={() => setHover({ id: personaje.id, tipo: "editar" })}
                             onMouseLeave={() => setHover({ id: null, tipo: null })}
                         ></img>
@@ -56,7 +56,7 @@ function DListaPersonajes() {
                 </div>
                 <div className="col-1 accionesDashboard">
                     <button onClick={() => handleEliminar(personaje.id)}>
-                        <img src="/src/assets/Iconos/eliminarNegro.svg"
+                        <img src="/AlPaloDevsFront/src/assets/Iconos/eliminarNegro.svg"
                             onMouseEnter={() => setHover({ id: personaje.id, tipo: "eliminar" })}
                             onMouseLeave={() => setHover({ id: null, tipo: null })}
                         ></img>
@@ -87,7 +87,7 @@ function DListaPersonajes() {
                 )}
             </div>
             <div className="row col-12 divCrear">
-                <Link to="/dashboard/personajes/nuevo" className="botonAñadir">
+                <Link to="/AlPaloDevsFront/dashboard/personajes/nuevo" className="botonAñadir">
                     Agregar Personaje
                 </Link>
             </div>

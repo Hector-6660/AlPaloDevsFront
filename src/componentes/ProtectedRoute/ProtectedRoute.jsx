@@ -10,12 +10,12 @@ export default function ProtectedRoute({ children, role }) {
 
   // Si no hay usuario
   if (!user) {
-    return <Navigate to="/inicio-sesion" replace />;
+    return <Navigate to="/AlPaloDevsFront/inicio-sesion" replace />;
   }
 
   // Si hay restricción de rol y el usuario no la cumple
   if (role && user.rol !== role) {
-    return <Navigate to="/" replace />;
+    return <Navigate to="/AlPaloDevsFront/" replace />;
   }
 
   // Si todo va bien, renderiza el componente hijo

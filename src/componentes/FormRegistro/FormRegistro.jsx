@@ -60,7 +60,7 @@ function FormRegistro() {
             </div>
             <button type="submit" className="botonRegistro">Registrarse</button>
             <div className="col-12 fin">
-                <p>¿Ya tienes una cuenta? <Link to="/inicio-sesion">Inicia sesión aquí</Link></p>
+                <p>¿Ya tienes una cuenta? <Link to="/AlPaloDevsFront/inicio-sesion">Inicia sesión aquí</Link></p>
             </div>
         </form>
     );

@@ -20,7 +20,7 @@ const ListaColecciones = () => {
         <div className="listaColecciones">
             <div className="col-12 coleccionesHeader">
                 <h2>Mis Colecciones</h2>
-                <Link to="/crear-coleccion">Crear Nueva Colección</Link>
+                <Link to="/AlPaloDevsFront/crear-coleccion">Crear Nueva Colección</Link>
             </div>
             <div className="col-12 coleccionesBody">
                 {listaColecciones.buscando ? (

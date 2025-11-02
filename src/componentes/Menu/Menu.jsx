@@ -10,27 +10,27 @@ function Menu() {
         <div className="row sticky-top">
             <nav className="navbar navbar-expand-lg bg-body-tertiary navbarMenu">
                 <div className="container-fluid menu">
-                    <Link className="enlaceLogo" to="/">
-                        <img src="/src/assets/Logo/logoFondoNegro.png" className="logoMenu"></img>
+                    <Link className="enlaceLogo" to="/AlPaloDevsFront/">
+                        <img src="/AlPaloDevsFront/src/assets/Logo/logoFondoNegro.png" className="logoMenu"></img>
                     </Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup">
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav">
-                            <Link className="nav-link enlace" to="/juegos">Juegos</Link>
-                            <Link className="nav-link enlace" to="/muestras">Juegos de muestra</Link>
-                            <Link className="nav-link enlace" to="/nosotros">Sobre nosotros</Link>
-                            <Link className="nav-link enlace" to="/contacto">Contacto</Link>
+                            <Link className="nav-link enlace" to="/AlPaloDevsFront/juegos">Juegos</Link>
+                            <Link className="nav-link enlace" to="/AlPaloDevsFront/muestras">Juegos de muestra</Link>
+                            <Link className="nav-link enlace" to="/AlPaloDevsFront/nosotros">Sobre nosotros</Link>
+                            <Link className="nav-link enlace" to="/AlPaloDevsFront/contacto">Contacto</Link>
                             <div className="registroInicioContainer">
                                 {user ? (
-                                    <Link to="/perfil">
+                                    <Link to="/AlPaloDevsFront/perfil">
                                         <img src={`${user.foto_perfil}`} alt="Foto perfil" className="fotoPerfilMenu" />
                                     </Link>
                                 ) : (
                                     <p className="textoMenu">
-                                        <Link className="nav-link registroInicio" to="/registro">Regístrate</Link> /
-                                        <Link className="nav-link registroInicio" to="/inicio-sesion">Iniciar sesión</Link>
+                                        <Link className="nav-link registroInicio" to="/AlPaloDevsFront/registro">Regístrate</Link> /
+                                        <Link className="nav-link registroInicio" to="/AlPaloDevsFront/inicio-sesion">Iniciar sesión</Link>
                                     </p>
                                 )}
                             </div>

@@ -13,7 +13,7 @@ function Contacto() {
             <div className="row">
                 <div className="contactoItem">
                     <div className="col-2">
-                        <img src="/src/assets/Redes/correo.png" alt="Email" />
+                        <img src="/AlPaloDevsFront/src/assets/Redes/correo.png" alt="Email" />
                     </div>
                     <div className="col-10 descripcionContacto">
                         <h3>Correo electrónico</h3>
@@ -24,7 +24,7 @@ function Contacto() {
 
                 <div className="contactoItem">
                     <div className="col-2">
-                        <img src="/src/assets/Redes/twitterx.png" alt="Twitter" />
+                        <img src="/AlPaloDevsFront/src/assets/Redes/twitterx.png" alt="Twitter" />
                     </div>
                     <div className="col-10 descripcionContacto">
                         <h3>Twitter</h3>
