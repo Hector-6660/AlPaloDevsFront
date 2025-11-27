@@ -47,9 +47,6 @@ function FormInicioSesion() {
             <div className="col-12">
                 <p>¿No tienes una cuenta? <Link to="/AlPaloDevsFront/registro">Regístrate aquí</Link></p>
             </div>
-            <div className="col-12 fin">
-                <p><a href="/recuperar-contrasena">¿Olvidaste tu contraseña?</a></p>
-            </div>
         </form>
     );
 }

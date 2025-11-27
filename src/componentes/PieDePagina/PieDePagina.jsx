@@ -24,8 +24,31 @@ function PieDePagina() {
                 </div>
                 
                 <div className="col-12 finPie">
-                    <p>Al Palo Devs</p>
-                    <a href="#top">Volver arriva</a>
+                    <p>
+                    <a href="https://example.com">Al Palo Devs</a> © 2025 by{" "}
+                    <a href="https://example.com">Héctor Añor de Maya</a> is licensed under{" "}
+                    <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+
+                    <img
+                        src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"
+                        alt=""
+                        style={{ maxWidth: "1em", maxHeight: "1em", marginLeft: ".2em" }}
+                    />
+
+                    <img
+                        src="https://mirrors.creativecommons.org/presskit/icons/by.svg"
+                        alt=""
+                        style={{ maxWidth: "1em", maxHeight: "1em", marginLeft: ".2em" }}
+                    />
+
+                    <img
+                        src="https://mirrors.creativecommons.org/presskit/icons/sa.svg"
+                        alt=""
+                        style={{ maxWidth: "1em", maxHeight: "1em", marginLeft: ".2em" }}
+                    />
+                    </p>
+
+                    <a href="#top">Volver arriba</a>
                 </div>
             </div>
         </footer>
