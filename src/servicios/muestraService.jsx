@@ -1,8 +1,11 @@
 const apiUrl = "http://alpalodevs.test/api/v1";
 
+// Crear una nueva demo
 export async function crearDemo(formData) {
+  // Obtener el token de autenticación desde localStorage
   const token = localStorage.getItem("token");
 
+  // Realizar la solicitud POST al endpoint de creación de demo
   const res = await fetch(`${apiUrl}/demos`, {
     method: "POST",
     headers: {
@@ -21,10 +24,13 @@ export async function crearDemo(formData) {
   return await res.json();
 }
 
+// Actualizar demo
 export async function actualizarDemo(id, formData) {
+  // Obtener el token de autenticación desde localStorage
   const token = localStorage.getItem("token");
-  formData.append("_method", "PUT");
 
+  // Realizar la solicitud POST al endpoint de actualización de demo
+  formData.append("_method", "PUT");
   const res = await fetch(`${apiUrl}/demos/${id}`, {
     method: "POST",
     headers: {
@@ -43,9 +49,12 @@ export async function actualizarDemo(id, formData) {
   return await res.json();
 }
 
+// Borrar demo
 export async function borrarDemo(id) {
+  // Obtener el token de autenticación desde localStorage
   const token = localStorage.getItem("token");
 
+  // Realizar la solicitud DELETE al endpoint de eliminación de demo
   const res = await fetch(`${apiUrl}/demos/${id}`, {
     method: "DELETE",
     headers: {

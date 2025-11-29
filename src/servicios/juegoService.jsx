@@ -1,8 +1,11 @@
 const apiUrl = "http://alpalodevs.test/api/v1";
 
+// Crear un nuevo juego
 export async function crearJuego(formData) {
+  // Obtener el token de autenticación desde localStorage
   const token = localStorage.getItem("token");
 
+  // Realizar la solicitud POST al endpoint de creación de juego
   const res = await fetch(`${apiUrl}/juegos`, {
     method: "POST",
     headers: {
@@ -21,11 +24,13 @@ export async function crearJuego(formData) {
   return await res.json();
 }
 
+// Actualizar juego
 export async function actualizarJuego(id, formData) {
-  formData.append("_method", "PUT");
-
+  // Obtener el token de autenticación desde localStorage
   const token = localStorage.getItem("token");
 
+  // Realizar la solicitud POST al endpoint de actualización de juego
+  formData.append("_method", "PUT");
   const res = await fetch(`${apiUrl}/juegos/${id}`, {
     method: "POST",
     headers: {
@@ -44,9 +49,12 @@ export async function actualizarJuego(id, formData) {
   return await res.json();
 }
 
+// Borrar juego
 export async function borrarJuego(id) {
+  // Obtener el token de autenticación desde localStorage
   const token = localStorage.getItem("token");
 
+  // Realizar la solicitud DELETE al endpoint de eliminación de juego
   const res = await fetch(`${apiUrl}/juegos/${id}`, {
     method: "DELETE",
     headers: {

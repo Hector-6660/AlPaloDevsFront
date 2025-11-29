@@ -1,6 +1,8 @@
 const apiUrl = "http://alpalodevs.test/api/v1";
 
+// Crear una nueva colección
 export async function crearColeccion(data) {
+    // Realizar la solicitud POST al endpoint de creación de colección
     const response = await fetch(`${apiUrl}/coleccions`, {
         method: "POST",
         headers: {
@@ -17,7 +19,9 @@ export async function crearColeccion(data) {
     return await response.json();
 }
 
+// Actualizar colección
 export async function actualizarColeccion(id, formData) {
+    // Realizar la solicitud POST al endpoint de actualización de colección
     formData.append("_method", "PUT");
     const response = await fetch(`${apiUrl}/coleccions/${id}`, {
         method: "POST",
@@ -34,7 +38,9 @@ export async function actualizarColeccion(id, formData) {
     return await response.json();
 }
 
+// Borrar colección
 export async function borrarColeccion(id) {
+    // Realizar la solicitud DELETE al endpoint de eliminación de colección
     const response = await fetch(`${apiUrl}/coleccions/${id}`, {
         method: "DELETE",
         headers: {
@@ -49,7 +55,9 @@ export async function borrarColeccion(id) {
     return await response.json();
 }
 
+// Añadir juego a colección
 export async function agregarJuegoAColeccion(coleccionId, juegoId) {
+    // Realizar la solicitud POST al endpoint de añadir juego a colección
     const response = await fetch(`${apiUrl}/coleccions/${coleccionId}/juegos/${juegoId}`, {
         method: "POST",
         headers: {
@@ -64,7 +72,9 @@ export async function agregarJuegoAColeccion(coleccionId, juegoId) {
     return await response.json();
 }
 
+// Quitar juego de colección
 export async function quitarJuegoDeColeccion(coleccionId, juegoId) {
+    // Realizar la solicitud DELETE al endpoint de quitar juego de colección
     const response = await fetch(`${apiUrl}/coleccions/${coleccionId}/juegos/${juegoId}`, {
         method: "DELETE",
         headers: {

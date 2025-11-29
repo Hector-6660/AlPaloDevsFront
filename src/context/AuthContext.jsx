@@ -3,17 +3,21 @@ import { useNavigate } from "react-router-dom";
 
 const AuthContext = createContext();
 
+// Componente proveedor de autenticación
 export function AuthProvider({ children }) {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
 
+    // Verificar si el usuario ya está autenticado al cargar el componente
     useEffect(() => {
         const storedUser = localStorage.getItem("user");
+        // Si hay un usuario almacenado
         if (storedUser) {
             try {
                 const parsedUser = JSON.parse(storedUser);
 
+                // Verificar si el usuario sigue siendo válido
                 fetch(`http://alpalodevs.test/api/v1/usuarios/${parsedUser.id}`)
                     .then(res => {
                         if (res.ok) {
@@ -23,6 +27,7 @@ export function AuthProvider({ children }) {
                             setUser(null);
                         }
                     })
+                    // Si hay un error en la solicitud, eliminar el usuario almacenado
                     .catch(() => {
                         localStorage.removeItem("user");
                         setUser(null);
@@ -38,6 +43,7 @@ export function AuthProvider({ children }) {
         }
     }, []);
 
+    // Funciones de login y logout
     const login = (userData) => {
         setUser(userData);
         localStorage.setItem("user", JSON.stringify(userData));
@@ -50,6 +56,7 @@ export function AuthProvider({ children }) {
         navigate("/AlPaloDevsFront/");
     };
 
+    // Proveer el contexto de autenticación a los componentes hijos
     return (
         <AuthContext.Provider value={{ user, login, logout, loading }}>
             {!loading && children}
@@ -57,6 +64,7 @@ export function AuthProvider({ children }) {
     );
 }
 
+// Hook personalizado para usar el contexto de autenticación
 export function useAuth() {
     return useContext(AuthContext);
 }

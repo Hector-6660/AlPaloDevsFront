@@ -1,8 +1,10 @@
 import React from "react";
 
+// Obtener todas las colecciones de un usuario por su ID
 function getAllColeccionesFromUser(userId) {
     const apiUrl = `http://alpalodevs.test/api/v1/usuarios/${userId}/colecciones`;
 
+    // Realizar la solicitud GET al endpoint de colecciones del usuario
     return fetch(apiUrl)
         .then((response) => response.json())
         .then (response => {

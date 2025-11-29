@@ -1,6 +1,8 @@
 const apiUrl = "http://alpalodevs.test/api/v1";
 
+// Registro de usuario
 export async function register(userData) {
+    // Realizar la solicitud POST al endpoint de registro
     const response = await fetch(`${apiUrl}/usuarios`, {
         method: "POST",
         headers: {
@@ -24,7 +26,9 @@ export async function register(userData) {
     return data;
 }
 
+// Inicio de sesión
 export async function login(credenciales) {
+    // Realizar la solicitud POST al endpoint de inicio de sesión
     const response = await fetch(`${apiUrl}/login`, {
         method: "POST",
         headers: {
@@ -47,11 +51,16 @@ export async function login(credenciales) {
     return data.usuario;
 }
 
+// Cierre de sesión
 export function logout() {
+    // Eliminar los datos del usuario y el token de localStorage
     localStorage.removeItem("user");
+    localStorage.removeItem("token");
 }
 
+// Eliminar cuenta de usuario
 export async function deleteAccount(id) {
+    // Realizar la solicitud DELETE al endpoint de eliminación de usuario
     const response = await fetch(`${apiUrl}/usuarios/${id}`, {
         method: "DELETE",
         headers: {

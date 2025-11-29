@@ -1,8 +1,10 @@
 import React from "react";
 
+// Obtener todos los personajes
 function getAllPersonajes() {
     const apiUrl = `http://alpalodevs.test/api/v1/personajes`;
 
+    // Realizar la solicitud GET al endpoint de personajes
     return fetch(apiUrl)
         .then((response) => response.json())
         .then (response => {

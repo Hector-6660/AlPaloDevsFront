@@ -1,8 +1,11 @@
 const apiUrl = "http://alpalodevs.test/api/v1";
 
+// Crear un nuevo personaje
 export async function crearPersonaje(formData) {
+  // Obtener el token de autenticación desde localStorage
   const token = localStorage.getItem("token");
 
+  // Realizar la solicitud POST al endpoint de creación de personaje
   const res = await fetch(`${apiUrl}/personajes`, {
     method: "POST",
     headers: {
@@ -21,10 +24,13 @@ export async function crearPersonaje(formData) {
   return await res.json();
 }
 
+// Actualizar personaje
 export async function actualizarPersonaje(id, formData) {
+  // Obtener el token de autenticación desde localStorage
   const token = localStorage.getItem("token");
-  formData.append("_method", "PUT");
 
+  // Realizar la solicitud POST al endpoint de actualización de personaje
+  formData.append("_method", "PUT");
   const res = await fetch(`${apiUrl}/personajes/${id}`, {
     method: "POST",
     headers: {
@@ -43,9 +49,12 @@ export async function actualizarPersonaje(id, formData) {
   return await res.json();
 }
 
+// Borrar personaje
 export async function borrarPersonaje(id) {
+  // Obtener el token de autenticación desde localStorage
   const token = localStorage.getItem("token");
 
+  // Realizar la solicitud DELETE al endpoint de eliminación de personaje
   const res = await fetch(`${apiUrl}/personajes/${id}`, {
     method: "DELETE",
     headers: {

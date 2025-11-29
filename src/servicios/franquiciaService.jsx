@@ -1,8 +1,11 @@
 const apiUrl = "http://alpalodevs.test/api/v1";
 
+// Crear una nueva franquicia
 export async function crearFranquicia(formData) {
+  // Obtener el token de autenticación desde localStorage
   const token = localStorage.getItem("token");
 
+  // Realizar la solicitud POST al endpoint de creación de franquicia
   const res = await fetch(`${apiUrl}/franquicias`, {
     method: "POST",
     headers: {
@@ -21,10 +24,12 @@ export async function crearFranquicia(formData) {
   return await res.json();
 }
 
+// Actualizar franquicia
 export async function actualizarFranquicia(id, formData) {
+  // Obtener el token de autenticación desde localStorage
   const token = localStorage.getItem("token");
+  // Realizar la solicitud POST al endpoint de actualización de franquicia
   formData.append("_method", "PUT");
-
   const res = await fetch(`${apiUrl}/franquicias/${id}`, {
     method: "POST",
     headers: {
@@ -43,9 +48,12 @@ export async function actualizarFranquicia(id, formData) {
   return await res.json();
 }
 
+// Borrar franquicia
 export async function borrarFranquicia(id) {
+  // Obtener el token de autenticación desde localStorage
   const token = localStorage.getItem("token");
 
+  // Realizar la solicitud DELETE al endpoint de eliminación de franquicia
   const res = await fetch(`${apiUrl}/franquicias/${id}`, {
     method: "DELETE",
     headers: {

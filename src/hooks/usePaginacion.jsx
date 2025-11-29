@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+// Hook para la paginación de una lista de elementos
 function usePagination(items = [], itemsPerPage = 9) {
     // Estado para la página actual
     const [currentPage, setCurrentPage] = useState(1);

@@ -1,8 +1,10 @@
 import React from "react";
 
+// Obtener todos los juegos
 function getAllJuegos() {
     const apiUrl = `http://alpalodevs.test/api/juegos`;
 
+    // Realizar la solicitud GET al endpoint de juegos
     return fetch(apiUrl)
         .then((response) => response.json())
         .then (response => {
