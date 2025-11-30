@@ -9,6 +9,7 @@ import "./DemoEspecifica.css";
 function DemoEspecifica(props) {
     const idDemo = useOneDemo(props.idDemoPantalla);
 
+    // Cargar el script dinámicamente cuando la demo esté lista
     useDynamicScript(idDemo.demo?.mainScript, !idDemo.buscando);
 
     function mostrarDemoEspecifico() {

@@ -9,9 +9,12 @@ function FormOpinion(props) {
     const [form, setForm] = useState({ titulo: "", contenido: "", puntuacion: "" });
     const [opinionExistente, setOpinionExistente] = useState(null);
 
+    // Cargar opinión existente al montar el componente
     useEffect(() => {
+        // Si hay un usuario autenticado, obtener su opinión para el juego dado
         if (user) {
             obtenerOpinionUsuario(user.id, props.juegoId).then(data => {
+                // Si hay una opinión existente, cargarla en el estado
                 if (data && data.id) {
                     setOpinionExistente(data);
                     setForm({
@@ -35,11 +38,13 @@ function FormOpinion(props) {
         e.preventDefault();
 
         try {
+            // Preparar los datos para enviar
             const payload = {
                 ...form,
                 puntuacion: parseInt(form.puntuacion, 10),
             };
 
+            // Llamar a la API para actualizar o crear la opinión
             let resp;
             if (opinionExistente) {
                 resp = await actualizarOpinion(opinionExistente.id, payload);
@@ -49,6 +54,7 @@ function FormOpinion(props) {
                 alert("Opinión publicada");
             }
 
+            // Actualizar el estado con la opinión resultante
             setOpinionExistente(resp.opinion);
             setForm({
                 titulo: resp.opinion.titulo,
@@ -63,6 +69,7 @@ function FormOpinion(props) {
     };
 
     const handleBorrar = async () => {
+        // Confirmar y borrar la opinión existente
         if (opinionExistente && window.confirm("¿Seguro que quieres borrar esta opinión?")) {
             await borrarOpinion(opinionExistente.id);
             alert("Opinión eliminada");
