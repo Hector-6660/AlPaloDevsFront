@@ -2,7 +2,7 @@ import React from "react";
 
 // Obtener una demo por su ID
 function getOneDemo(demoId) {
-    const apiUrl = `http://alpalodevs.test/api/v1/demos/${demoId}`;
+    const apiUrl = `https://alpalodevs.net/api/v1/demos/${demoId}`;
 
     // Realizar la solicitud GET al endpoint de la demo
     return fetch(apiUrl)

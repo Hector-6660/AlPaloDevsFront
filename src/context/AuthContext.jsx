@@ -18,7 +18,7 @@ export function AuthProvider({ children }) {
                 const parsedUser = JSON.parse(storedUser);
 
                 // Verificar si el usuario sigue siendo válido
-                fetch(`http://alpalodevs.test/api/v1/usuarios/${parsedUser.id}`)
+                fetch(`https://alpalodevs.net/api/v1/usuarios/${parsedUser.id}`)
                     .then(res => {
                         if (res.ok) {
                             setUser(parsedUser);

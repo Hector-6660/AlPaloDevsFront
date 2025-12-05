@@ -2,7 +2,7 @@ import React from "react";
 
 // Obtener un personaje por su ID
 function getOnePersonaje(personajeId) {
-    const apiUrl = `http://alpalodevs.test/api/v1/personajes/${personajeId}`;
+    const apiUrl = `https://alpalodevs.net/api/v1/personajes/${personajeId}`;
 
     // Realizar la solicitud GET al endpoint del personaje
     return fetch(apiUrl)

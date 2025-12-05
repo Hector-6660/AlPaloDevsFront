@@ -2,7 +2,7 @@ import React from "react";
 
 // Obtener una franquicia por su ID
 function getOneFranquicia(franquiciaId) {
-    const apiUrl = `http://alpalodevs.test/api/v1/franquicias/${franquiciaId}`;
+    const apiUrl = `https://alpalodevs.net/api/v1/franquicias/${franquiciaId}`;
 
     // Realizar la solicitud GET al endpoint de la franquicia
     return fetch(apiUrl)

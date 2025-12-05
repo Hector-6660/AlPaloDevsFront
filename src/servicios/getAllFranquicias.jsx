@@ -2,7 +2,7 @@ import React from "react";
 
 // Obtener todas las franquicias
 function getAllFranquicias() {
-    const apiUrl = `http://alpalodevs.test/api/v1/franquicias`;
+    const apiUrl = `https://alpalodevs.net/api/v1/franquicias`;
 
     // Realizar la solicitud GET al endpoint de franquicias
     return fetch(apiUrl)

@@ -43,7 +43,7 @@ function EditarPerfil() {
         formData.append("_method", "PUT");
 
         try {
-            const response = await fetch(`http://alpalodevs.test/api/v1/usuarios/${user.id}`, {
+            const response = await fetch(`https://alpalodevs.net/api/v1/usuarios/${user.id}`, {
                 method: "POST",
                 headers: {
                     "Accept": "application/json"

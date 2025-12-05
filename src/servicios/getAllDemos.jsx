@@ -2,7 +2,7 @@ import React from "react";
 
 // Obtener todas las demos
 function getAllDemos() {
-    const apiUrl = `http://alpalodevs.test/api/v1/demos`;
+    const apiUrl = `https://alpalodevs.net/api/v1/demos`;
 
     // Realizar la solicitud GET al endpoint de demos
     return fetch(apiUrl)

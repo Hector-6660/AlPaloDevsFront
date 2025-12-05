@@ -1,4 +1,4 @@
-const apiUrl = "http://alpalodevs.test/api/v1";
+const apiUrl = "https://alpalodevs.net/api/v1";
 
 // Registro de usuario
 export async function register(userData) {
