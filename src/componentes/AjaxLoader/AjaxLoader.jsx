@@ -1,9 +1,10 @@
 import React from "react";
+import gif from '/src/assets/ajax-loader.gif';
 
 function AjaxLoader() {
     return (
         <>
-            <img src="/AlPaloDevsFront/src/assets/ajax-loader.gif"></img>
+            <img src={gif} alt="Loading..." />
         </>
     );
 }
