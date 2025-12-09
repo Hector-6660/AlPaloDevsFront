@@ -1,4 +1,4 @@
-const apiUrl = "https://alpalodevs.net/api/v1";
+const apiUrl = "http://alpalodevs.test/api/v1";
 
 // Crear una nueva colección
 export async function crearColeccion(data) {
@@ -21,15 +21,18 @@ export async function crearColeccion(data) {
 
 // Actualizar colección
 export async function actualizarColeccion(id, formData) {
+    // Realizar la solicitud POST al endpoint de actualización de colección
     formData.append("_method", "PUT");
     const response = await fetch(`${apiUrl}/coleccions/${id}`, {
         method: "POST",
+        headers: {
+            "Accept": "application/json",
+        },
         body: formData,
     });
 
     if (!response.ok) {
-        const errorText = await response.text();
-        throw new Error("Error al actualizar la colección: " + errorText);
+        throw new Error("Error al actualizar la colección");
     }
 
     return await response.json();
