@@ -21,18 +21,15 @@ export async function crearColeccion(data) {
 
 // Actualizar colección
 export async function actualizarColeccion(id, formData) {
-    // Realizar la solicitud POST al endpoint de actualización de colección
     formData.append("_method", "PUT");
     const response = await fetch(`${apiUrl}/coleccions/${id}`, {
         method: "POST",
-        headers: {
-            "Accept": "application/json",
-        },
         body: formData,
     });
 
     if (!response.ok) {
-        throw new Error("Error al actualizar la colección");
+        const errorText = await response.text();
+        throw new Error("Error al actualizar la colección: " + errorText);
     }
 
     return await response.json();
