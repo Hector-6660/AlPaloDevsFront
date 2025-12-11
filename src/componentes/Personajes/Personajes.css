@@ -73,9 +73,3 @@
 .derecha {
     margin-left: 5px;
 }
-
-@media (max-width: 991px) {
-    .personajeMarco:active {
-        width: 150px;
-    }
-}

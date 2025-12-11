@@ -2,6 +2,18 @@
     text-align: center;
 }
 
+.noMovil {
+    padding: 7%;
+
+    img {
+        width: 50px;
+    }
+
+    p {
+        margin: 0px;
+    }
+}
+
 #miCanvas {
     border: solid 1px #ccc;
     margin: 20px;

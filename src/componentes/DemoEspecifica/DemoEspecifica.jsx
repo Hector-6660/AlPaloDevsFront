@@ -6,6 +6,8 @@ import useDynamicScript from "../../hooks/useDynamicScript";
 import AjaxLoader from "../AjaxLoader/AjaxLoader";
 import "./DemoEspecifica.css";
 
+import caraTriste from "/src/assets/Iconos/caraTriste.svg";
+
 function DemoEspecifica(props) {
     const idDemo = useOneDemo(props.idDemoPantalla);
 
@@ -16,7 +18,16 @@ function DemoEspecifica(props) {
         return (
             <>
                 <div className="col-12 datosPrincipalesDemo">
-                    <div className="row">
+                    <div className="row d-block d-lg-none">
+                        <div className="col-12">
+                            <h1>{idDemo.demo.nombre}</h1>
+                        </div>
+                        <div className="col-12 noMovil">
+                            <img src={caraTriste} alt="caraTriste" />
+                            <p>Demo no disponible para dispositivos móviles</p>
+                        </div>
+                    </div>
+                    <div className="row d-none d-lg-block">
                         <div className="col-12">
                             <h1>{idDemo.demo.nombre}</h1>
                         </div>

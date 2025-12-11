@@ -14,7 +14,7 @@
 }
 
 .franquiciaLogo {
-    width: 5%;
+    width: 7%;
 }
 
 .franquiciaDatos {
@@ -29,5 +29,17 @@
 
     p {
         padding: 1% 5% 2% 5%;
+    }
+}
+
+@media (max-width: 900px) {
+    .franquiciaLogo {
+        width: 10%;
+    }
+}
+
+@media (max-width: 600px) {
+    .franquiciaLogo {
+        width: 20%;
     }
 }

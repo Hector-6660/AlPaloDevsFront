@@ -1,0 +1,9 @@
+.ajax-loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ajax-loader {
+    width: 2%;
+}

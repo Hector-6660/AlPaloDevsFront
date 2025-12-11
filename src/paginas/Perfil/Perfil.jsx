@@ -2,7 +2,7 @@ import React from "react";
 import DatosUsuario from "../../componentes/DatosUsuario/DatosUsuario";
 import ListaColecciones from "../../componentes/ListaColecciones/ListaColecciones";
 
-function Perfil(props) {
+function Perfil() {
     return (
         <div className="row">
             <DatosUsuario></DatosUsuario>

@@ -36,3 +36,23 @@
         justify-content: center;
     }
 }
+
+@media (max-width: 768px) {
+    .nosotrosItem {
+        flex-direction: column;
+
+        div {
+            display: flex;
+            justify-content: center;
+            img {
+                padding: 5px;
+                width: 80%;
+            }
+        }
+
+        .descripcionNosotros, .descripcion2Nosotros {
+            padding: 15px;
+            width: 90%;
+        }
+    }
+}

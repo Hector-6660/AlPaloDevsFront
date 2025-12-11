@@ -1,9 +1,10 @@
 .datosUsuario {
-    padding: 0px 50px 0px 50px;
+    padding: 0px 50px 20px 50px;
     background-color: #000000;
     color: white;
     margin: 10px 0px 10px 0px;
     display: flex;
+    flex-direction: column;
 }
 
 .fotoPerfilUsuario {
@@ -16,61 +17,103 @@
     justify-content: center;
     padding-left: 50px;
     gap: 10px;
+}
 
-    .cerrarSesion {
-        display: flex;
-        padding: 10px 15px;
-        color: rgb(223, 49, 49);
-        border-radius: 10px;
-        text-decoration: none;
-        border: 2px solid rgb(223, 49, 49);
-        font-size: 1.2rem;
+.accionesUsuario {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.cerrarSesion {
+    display: flex;
+    padding: 10px 15px;
+    color: #df3131;
+    border-radius: 10px;
+    text-decoration: none;
+    border: 2px solid rgb(223, 49, 49);
+    font-size: 1.2rem;
+    width: fit-content;
+    text-align: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+.cerrarSesion:hover {
+    background-color: rgb(223, 49, 49);
+    color: rgb(255, 255, 255);
+    border: 2px solid rgb(223, 49, 49);
+
+    img {
+        filter: brightness(0) invert(1);
+    }
+}
+
+.editarPerfil {
+    display: flex;
+    padding: 10px 15px;
+    color: #2de02d;
+    border-radius: 10px;
+    text-decoration: none;
+    border: 2px solid rgb(45, 224, 45);
+    font-size: 1.2rem;
+    width: fit-content;
+    text-align: center;
+    background-color: transparent;
+}
+
+.editarPerfil:hover {
+    background-color: rgb(45, 224, 45);
+    color: rgb(255, 255, 255);
+    border: 2px solid rgb(45, 224, 45);
+
+    img {
+        filter: brightness(0) invert(1);
+    }
+}
+
+.borrarPerfil {
+    display: flex;
+    color: rgb(197, 197, 197);
+    border-radius: 10px;
+    text-decoration: none;
+    border: 2px solid rgb(197, 197, 197);
+    font-size: 1.2rem;
+    width: fit-content;
+    text-align: center;
+    background-color: transparent;
+    height: fit-content;
+}
+
+.borrarPerfil:hover {
+    background-color: rgb(197, 197, 197);
+    color: black;
+    border: 2px solid rgb(197, 197, 197);
+}
+
+@media (max-width: 768px) {
+    .informacionUsuario {
+        padding-left: 0%;
+    }
+
+    .accionesUsuario {
+        justify-content: center;
         width: fit-content;
-        text-align: center;
-        background-color: transparent;
-    }
 
-    .cerrarSesion:hover {
-        background-color: rgb(223, 49, 49);
-        color: white;
-        border: 2px solid rgb(223, 49, 49);
-    }
+        .cerrarSesion {
+            padding: 5px 10px;
+            font-size: 1rem;
+        }
 
-    .editarPerfil {
-        display: flex;
-        padding: 10px 15px;
-        color: rgb(45, 224, 45);
-        border-radius: 10px;
-        text-decoration: none;
-        border: 2px solid rgb(45, 224, 45);
-        font-size: 1.2rem;
-        width: fit-content;
-        text-align: center;
-        background-color: transparent;
-    }
+        .editarPerfil {
+            padding: 5px 10px;
+            font-size: 1rem;
+        }
 
-    .editarPerfil:hover {
-        background-color: rgb(45, 224, 45);
-        color: rgb(255, 255, 255);
-        border: 2px solid rgb(45, 224, 45);
-    }
-
-    .borrarPerfil {
-        display: flex;
-        color: rgb(255, 255, 255);
-        border-radius: 10px;
-        text-decoration: none;
-        border: 2px solid rgb(255, 255, 255);
-        font-size: 1.2rem;
-        width: fit-content;
-        text-align: center;
-        background-color: transparent;
-        margin-bottom: 10px;
-    }
-
-    .borrarPerfil:hover {
-        background-color: rgb(255, 255, 255);
-        color: black;
-        border: 2px solid rgb(255, 255, 255);
+        .borrarPerfil {
+            font-size: 1rem;
+        }
     }
 }

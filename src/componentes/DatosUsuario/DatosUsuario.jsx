@@ -5,6 +5,9 @@ import { deleteAccount } from "../../servicios/authService";
 import AjaxLoader from "../AjaxLoader/AjaxLoader";
 import "./DatosUsuario.css";
 
+import editarVerde from "/src/assets/Iconos/editarVerde.svg";
+import cerrarSesion from "/src/assets/Iconos/cerrarSesion.svg";
+
 function DatosUsuario() {
     const { user, logout, loading } = useAuth();
 
@@ -30,15 +33,24 @@ function DatosUsuario() {
 
         return (
             <div className="col-12 datosUsuario">
-                <div className="col-4">
-                    <img src={usuario.foto_perfil} alt="Foto de perfil" className="fotoPerfilUsuario" />
+                <div className="col-12 d-flex row">
+                    <div className="col-6 col-md-4 d-flex justify-content-center align-items-center">
+                        <img src={usuario.foto_perfil} alt="Foto de perfil" className="fotoPerfilUsuario" />
+                    </div>
+                    <div className="col-6 col-md-8 informacionUsuario">
+                        <h1>{usuario.nick}</h1>
+                        <h3>{usuario.nombre}</h3>
+                        <p>Email: {usuario.email}</p>
+                        <div className="d-none d-md-flex row accionesUsuario">
+                            <Link to="/AlPaloDevsFront/editar-perfil" className="editarPerfil"><img src={editarVerde} alt="Editar perfil" /> Editar perfil</Link>
+                            <button onClick={logout} className="cerrarSesion"><img src={cerrarSesion} alt="Cerrar sesión" /> Cerrar sesión</button>
+                            <button onClick={handleDelete} className="borrarPerfil">Borrar cuenta</button>
+                        </div>
+                    </div>
                 </div>
-                <div className="col-8 informacionUsuario">
-                    <h1>{usuario.nick}</h1>
-                    <h3>{usuario.nombre}</h3>
-                    <p>Email: {usuario.email}</p>
-                    <Link to="/AlPaloDevsFront/editar-perfil" className="editarPerfil">Editar perfil</Link>
-                    <button onClick={logout} className="cerrarSesion">Cerrar sesión</button>
+                <div className="col-12 d-md-flex row d-md-none accionesUsuario">
+                    <Link to="/AlPaloDevsFront/editar-perfil" className="editarPerfil"><img src={editarVerde} alt="Editar perfil" /> Editar perfil</Link>
+                    <button onClick={logout} className="cerrarSesion"><img src={cerrarSesion} alt="Cerrar sesión" /> Cerrar sesión</button>
                     <button onClick={handleDelete} className="borrarPerfil">Borrar cuenta</button>
                 </div>
             </div>

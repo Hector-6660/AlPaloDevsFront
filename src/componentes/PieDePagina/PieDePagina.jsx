@@ -15,12 +15,12 @@ function PieDePagina() {
             </div>
             <div className="col-12 cuerpoPie">
                 <div className="row">
-                <div className="col-6 logoPie">
-                    <img src={logoMenu} className="logoMenu"></img>
-                </div>
-                <div className="col-6 botonContactoArea">
-                    <Link to="/AlPaloDevsFront/contacto" className="botonContacto">Contáctanos</Link>
-                </div>
+                    <div className="col-6 logoPie">
+                        <img src={logoMenu} className="logoMenuPie"></img>
+                    </div>
+                    <div className="col-6 botonContactoArea">
+                        <Link to="/AlPaloDevsFront/contacto" className="botonContacto">Contáctanos</Link>
+                    </div>
                 </div>
                 
                 <div className="col-12 finPie">
